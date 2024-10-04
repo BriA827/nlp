@@ -1,0 +1,15 @@
+record_db = []
+record = {}
+for i in range(0,10):
+    record["age"] = i
+    record_db.append(record)
+
+print(record_db)
+
+token = ["age", '>', "3"]
+query_str = "db_entry[" +"'" + token[0] + "'" + "]" + "" + token[1] + "" + token[2]
+print(query_str)
+
+for db_entry in record_db:
+    if eval(query_str):
+        print(db_entry)
