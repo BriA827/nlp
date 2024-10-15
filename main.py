@@ -65,6 +65,7 @@ def parse(query, keys, types):
     query_tokens = []
     query_list1 = []
     query_list2 = []
+    query_types = []
     
     #testing the length to be 3 with "and" "or" in the query
     if len(query.split(" ")) != 3:
@@ -100,39 +101,52 @@ def parse(query, keys, types):
                 return valid_query, query_tokens
             
             t = token_type(types, keys.index(q[0]))
+            query_types.append(t)
             c_t = token_type_valid(q[2], t)
 
             if c_t != True:
                 valid_query = False
                 return valid_query, query_tokens
             else:
-                query_tokens.append(q)
+                query_tokens = query.split()
     else:
         if query_tokens[0] not in keys or query_tokens[1] not in ops:
                 valid_query = False
                 return valid_query, query_tokens
             
         t = token_type(types, keys.index(query_tokens[0]))
+        query_types.append(t)
         c_t = token_type_valid(query_tokens[2], t)
 
         if c_t != True:
             valid_query = False
             return valid_query, query_tokens
         
-    return valid_query, query_tokens, multiple
+    return valid_query, query_tokens, query_types
 
-def eval_db(ts, num, db):
-    if num == True:
-        for token in ts:
-            query_str = "db_entry[" +"'" + token[0] + "'" + "]" + "" + token[1] + "" + token[2]
-            print(query_str)
+def eval_db(ts, db, tt):
+    db_enteries = []
+
+    if len(ts) > 3:
+        if tt[0] == str and tt[1] == int:
+            query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + "'" + ts[2] + "'" + " " + ts[3] + " " + "db_entry[" +"'" + ts[4] + "'" + "]" + "" + ts[5] + "" + ts[6]
+        elif tt[0] == str and tt[1] == str:
+            query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + "'" + ts[2] + "'" + " " + ts[3] + " " + "db_entry[" +"'" + ts[4] + "'" + "]" + "" + ts[5] + "" + "'" + ts[6] + "'"
+        elif tt[0] == int and tt[1] == str:
+            query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + ts[2] + " " + ts[3] + " " + "db_entry[" +"'" + ts[4] + "'" + "]" + "" + ts[5] + "" + "'" + ts[6] + "'"
+        else:
+            query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + ts[2]
+
     else:
-        query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + ts[2]
-        print(query_str)
+        if tt[0] == str:
+            query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + "'" + ts[2] + "'"
+        else:
+            query_str = "db_entry[" +"'" + ts[0] + "'" + "]" + "" + ts[1] + "" + ts[2]
 
     for db_entry in db:
         if eval(query_str):
-            print(db_entry)
+            db_enteries.append(db_entry)
+    return db_enteries
 
 ########## CODE ###########
 
@@ -141,8 +155,9 @@ comp_db, comp_keys, comp_types = file_database(company)
 
 query = input("Find all records with: ")
 while query != "exit":
-    valid, tokens, multiples = parse(query, comp_keys, comp_types)
-    print(valid, tokens)
+    valid, tokens, types = parse(query, comp_keys, comp_types)
+    print(valid, tokens, types)
     if valid == True:
-        eval_db(tokens, multiples, comp_db)
+        enteries = eval_db(tokens, comp_db, types)
+        print(enteries)
     query = input("Find all records with: ")
