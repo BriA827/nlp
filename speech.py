@@ -1,4 +1,8 @@
+corpus = open("/home/kuni/nlp/corpus.txt", "r")
+# print(corpus.read())
+
 import math
+import matplotlib as plt
 
 def mean(data):
     sum = 0
@@ -18,5 +22,17 @@ def stand_dev(data):
     de = math.sqrt(variance(data))
     return de
 
-corpus = open("/home/kuni/nlp/corpus.txt", "r")
-print(corpus.read())
+def line_graph(x_list, y_list, x_label = None, y_label = None, amount=1, colour='blue', mark="o", line='-'):
+    '''amount is number of lines on a graph. if the amount is greater than one, submit lists of lists for the other three paramters. ex: amount=1, x_list=[1,2,3] or amount=2, x_list=[[1,2,3],[4,5,6]]'''
+    if amount >1:
+        for num in range(0, amount):
+            plt.plot(x_list[num], y_list[num], color=colour[num], marker=mark[num], linestyle=line[num])
+    else:
+        plt.plot(x_list, y_list, color=colour, marker=mark, linestyle=line)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.show()
+
+################33
+
+print(corpus.readlines(100))
