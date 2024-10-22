@@ -1,8 +1,8 @@
-corpus = open("/home/kuni/nlp/corpus.txt", "r")
+corpus = open("corpus.txt", "r")
 # print(corpus.read())
 
 import math
-import matplotlib as plt
+# import matplotlib as plt
 
 def mean(data):
     sum = 0
@@ -22,7 +22,7 @@ def stand_dev(data):
     de = math.sqrt(variance(data))
     return de
 
-def line_graph(x_list, y_list, x_label = None, y_label = None, amount=1, colour='blue', mark="o", line='-'):
+# def line_graph(x_list, y_list, x_label = None, y_label = None, amount=1, colour='blue', mark="o", line='-'):
     '''amount is number of lines on a graph. if the amount is greater than one, submit lists of lists for the other three paramters. ex: amount=1, x_list=[1,2,3] or amount=2, x_list=[[1,2,3],[4,5,6]]'''
     if amount >1:
         for num in range(0, amount):
@@ -36,13 +36,14 @@ def line_graph(x_list, y_list, x_label = None, y_label = None, amount=1, colour=
 def corpus_to_db(file):
     cd = []
     file_split = (file.read()).split("$")
-    print(file_split[1])
+    # print(file_split[1])
     for s in file_split:
         dict = {}
-        dict[s[0]]:s[1:-1]
+        dict[(s.split())[1]] = "hi"
         cd.append(dict)
-    print(cd[0])
+    return cd
 
 ################
 
-corpus_to_db(corpus)
+speeches = corpus_to_db(corpus)
+print(cd)
