@@ -33,6 +33,16 @@ def line_graph(x_list, y_list, x_label = None, y_label = None, amount=1, colour=
     plt.ylabel(y_label)
     plt.show()
 
-################33
+def corpus_to_db(file):
+    cd = []
+    file_split = (file.read()).split("$")
+    print(file_split[1])
+    for s in file_split:
+        dict = {}
+        dict[s[0]]:s[1:-1]
+        cd.append(dict)
+    print(cd[0])
 
-print(corpus.readlines(100))
+################
+
+corpus_to_db(corpus)
