@@ -87,36 +87,62 @@ def word_v_year(data):
     plt.grid()
     plt.show()
 
-def gauss(x,mew,sigma):
-    v = (1)/(sigma * math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((x-mew)/sigma)**2))
-    return v
+def gauss(data):
+    mews = 0
+    stnds = 0
 
+    words = [len(sp["text"]) for sp in data]
+    mews = int(round(mean(words),0))
+    stnds = int(round(stand_dev(words),0))
 
-############# FINISH GAUSSIAN PLOTS #############
-# def gauss_plot(data):
+    ys = []
+    xs = [a for a in range(-2*stnds+mews, 2*stnds+mews)]
+
+    for i in range(0,len(xs)):
+        y = ((1)/(stnds* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((xs[i]-mews)/stnds)**2)))
+        ys.append(y)
+
+    return xs, ys, mews, stnds
+
+def gauss_plot(data):
+    x = []
+    y = []
+    mew = []
+    stnd = []
+
+    lines_x =[]
+    lines_y = []
+
+    for i in range(0,len(data)):
+        vs = gauss(data[i])
+        x.append(vs[0])
+        y.append(vs[1])
+        mew.append(vs[2])
+        stnd.append(vs[3])
+
+        lines_x.append(vs[2])
+        lines_x.append(-2*vs[3]+vs[2])
+        lines_x.append(2*vs[3]+vs[2])
+
+        for n in range(0,len(lines_x)):
+            j = ((1)/(vs[3] * math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((lines_x[i]-vs[2])/vs[3])**2)))
+            lines_y.append(j)
+
     plt.title("Distribution of Inaugural Speech Lengths")
     plt.xlabel("Speech Length")
-    plt.ylabel("Propability Density")
-
-    num = len(data)
-
-    for n in range(0,num):
-        xs = []
-        for i in data[n]:
-            ind = data[n].index(i)
-            xs.append(len(data[n][ind]["text"]))
-        ys = [gauss()]
-
-        plt.plot(xs,ys, "b*-")
-
-        mew = mean(ys)
-        sigma = stand_dev(ys)
-
-        for p in [mew, mew+sigma, mew-sigma]:
-            plt.plot(xs, [p for i in range(0,len(xs))], "r-", linewidth=2)
-
+    plt.ylabel("Probability Density")
     plt.grid()
+    c = ["g", "b"]
+    for i in range(0, len(x)):
+        plt.plot(x[i], y[i], c[i])
+
+    for i in range(0,len(lines_x)):
+        plt.plot(lines_x[i], lines_y[i], "r")
+
+    print(lines_y)
+
     plt.show()
+
 
 def sentence_finder(data, graph=True):
     pun = [".", "?", "!"]
@@ -293,10 +319,12 @@ speeches = corpus_to_db(corpus)
 
 avg_sen = sentence_finder(speeches, False)
 
+gauss_plot([speeches[0:38], speeches[38:-1]])
+
 # percents = word_len(speeches, 8, ">=")
 
 avg_syls = syllables(speeches, False)
 
 grades = flesch(speeches,avg_sen, avg_syls, False)
 
-plots([sp["year"] for sp in speeches], avg_sen, avg_syls, grades)
+# plots([sp["year"] for sp in speeches], avg_sen, avg_syls, grades)
