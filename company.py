@@ -1,4 +1,4 @@
-company = open("/home/kuni/nlp/company_db.txt", "r")
+company = open("company_db.txt", "r")
 # print(company.read())
 
 ####### FUNCTIONS #############

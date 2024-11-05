@@ -315,16 +315,16 @@ def plots(years,len_mean,syls,levels):
 
 speeches = corpus_to_db(corpus)
 
-# word_v_year([speeches[0:38],speeches[38:-1]])
+word_v_year([speeches[0:38],speeches[38:-1]])
 
 avg_sen = sentence_finder(speeches, False)
 
 gauss_plot([speeches[0:38], speeches[38:-1]])
 
-# percents = word_len(speeches, 8, ">=")
+percents = word_len(speeches, 8, ">=")
 
 avg_syls = syllables(speeches, False)
 
 grades = flesch(speeches,avg_sen, avg_syls, False)
 
-# plots([sp["year"] for sp in speeches], avg_sen, avg_syls, grades)
+plots([sp["year"] for sp in speeches], avg_sen, avg_syls, grades)
