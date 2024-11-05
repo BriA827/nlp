@@ -1,4 +1,4 @@
-$ GEORGE WASHINGTON 1	1789
+§ GEORGE WASHINGTON 1	1789
 
 Fellow-Citizens of the Senate and of the House of Representatives:
 
@@ -14,7 +14,7 @@ To the foregoing observations I have one to add, which will be most properly add
 
 Having thus imparted to you my sentiments as they have been awakened by the occasion which brings us together, I shall take my present leave; but not without resorting once more to the benign Parent of the Human Race in humble supplication that, since He has been pleased to favor the American people with opportunities for deliberating in perfect tranquillity, and dispositions for deciding with unparalleled unanimity on a form of government for the security of their union and the advancement of their happiness, so His divine blessing may be equally conspicuous in the enlarged views, the temperate consultations, and the wise measures on which the success of this Government must depend.
 
-$ GEORGE WASHINGTON 2	1793
+§ GEORGE WASHINGTON 2	1793
 
 Fellow Citizens:
 
@@ -22,7 +22,7 @@ I am again called upon by the voice of my country to execute the functions of it
 
 Previous to the execution of any official act of the President the Constitution requires an oath of office. This oath I am now about to take, and in your presence: That if it shall be found during my administration of the Government I have in any instance violated willingly or knowingly the injunctions thereof, I may (besides incurring constitutional punishment) be subject to the upbraidings of all who are now witnesses of the present solemn ceremony.
 
-$ JOHN ADAMS	1797
+§ JOHN ADAMS	1797
 
 When it was first perceived, in early times, that no middle course for America remained between unlimited submission to a foreign legislature and a total independence of its claims, men of reflection were less apprehensive of danger from the formidable power of fleets and armies they must determine to resist than from those contests and dissensions which would certainly arise concerning the forms of government to be instituted over the whole and over the parts of this extensive country. Relying, however, on the purity of their intentions, the justice of their cause, and the integrity and intelligence of the people, under an overruling Providence which had so signally protected this country from the first, the representatives of this nation, then consisting of little more than half its present number, not only broke to pieces the chains which were forging and the rod of iron that was lifted up, but frankly cut asunder the ties which had bound them, and launched into an ocean of uncertainty.
 
@@ -52,7 +52,7 @@ With this great example before me, with the sense and spirit, the faith and hono
 
 And may that Being who is supreme over all, the Patron of Order, the Fountain of Justice, and the Protector in all ages of the world of virtuous liberty, continue His blessing upon this nation and its Government and give it all possible success and duration consistent with the ends of His providence.
 
-$ THOMAS JEFFERSON 1	1801
+§ THOMAS JEFFERSON 1	1801
 
 Friends and Fellow-Citizens:
 
@@ -68,7 +68,7 @@ I repair, then, fellow-citizens, to the post you have assigned me. With experien
 
 Relying, then, on the patronage of your good will, I advance with obedience to the work, ready to retire from it whenever you become sensible how much better choice it is in your power to make. And may that Infinite Power which rules the destinies of the universe lead our councils to what is best, and give them a favorable issue for your peace and prosperity.
 
-$ THOMAS JEFFERSON 2	1805
+§ THOMAS JEFFERSON 2	1805
 
 Proceeding, fellow-citizens, to that qualification which the Constitution requires before my entrance on the charge again conferred on me, it is my duty to express the deep sense I entertain of this new proof of confidence from my fellow-citizens at large, and the zeal with which it inspires me so to conduct myself as may best satisfy their just expectations.
 
@@ -100,7 +100,7 @@ Contemplating the union of sentiment now manifested so generally as auguring har
 
 I shall now enter on the duties to which my fellow-citizens have again called me, and shall proceed in the spirit of those principles which they have approved. I fear not that any motives of interest may lead me astray; I am sensible of no passion which could seduce me knowingly from the path of justice, but the weaknesses of human nature and the limits of my own understanding will produce errors of judgment sometimes injurious to your interests. I shall need, therefore, all the indulgence which I have heretofore experienced from my constituents; the want of it will certainly not lessen with increasing years. I shall need, too, the favor of that Being in whose hands we are, who led our fathers, as Israel of old, from their native land and planted them in a country flowing with all the necessaries and comforts of life; who has covered our infancy with His providence and our riper years with His wisdom and power, and to whose goodness I ask you to join in supplications with me that He will so enlighten the minds of your servants, guide their councils, and prosper their measures that whatsoever they do shall result in your good, and shall secure to you the peace, friendship, and approbation of all nations.
 
-$ JAMES MADISON 1	1809
+§ JAMES MADISON 1	1809
 
 Unwilling to depart from examples of the most revered authority, I avail myself of the occasion now presented to express the profound impression made on me by the call of my country to the station to the duties of which I am about to pledge myself by the most solemn of sanctions. So distinguished a mark of confidence, proceeding from the deliberate and tranquil suffrage of a free and virtuous nation, would under any circumstances have commanded my gratitude and devotion, as well as filled me with an awful sense of the trust to be assumed. Under the various circumstances which give peculiar solemnity to the existing period, I feel that both the honor and the responsibility allotted to me are inexpressibly enhanced.
 
@@ -116,7 +116,7 @@ It is my good fortune, moreover, to have the path in which I am to tread lighted
 
 But the source to which I look or the aids which alone can supply my deficiencies is in the well-tried intelligence and virtue of my fellow-citizens, and in the counsels of those representing them in the other departments associated in the care of the national interests. In these my confidence will under every difficulty be best placed, next to that which we have all been encouraged to feel in the guardianship and guidance of that Almighty Being whose power regulates the destiny of nations, whose blessings have been so conspicuously dispensed to this rising Republic, and to whom we are bound to address our devout gratitude for the past, as well as our fervent supplications and best hopes for the future.
 
-$ JAMES MADISON 2	1813
+§ JAMES MADISON 2	1813
 
 About to add the solemnity of an oath to the obligations imposed by a second call to the station in which my country heretofore placed me, I find in the presence of this respectable assembly an opportunity of publicly repeating my profound sense of so distinguished a confidence and of the responsibility united with it. The impressions on me are strengthened by such an evidence that my faithful endeavors to discharge my arduous duties have been favorably estimated, and by a consideration of the momentous period at which the trust has been renewed. From the weight and magnitude now belonging to it I should be compelled to shrink if I had less reliance on the support of an enlightened and generous people, and felt less deeply a conviction that the war with a powerful nation, which forms so prominent a feature in our situation, is stamped with that justice which invites the smiles of Heaven on the means of conducting it to a successful termination.
 
@@ -140,7 +140,7 @@ To render the justice of the war on our part the more conspicuous, the reluctanc
 
 These resources are amply sufficient to bring the war to an honorable issue. Our nation is in number more than half that of the British Isles. It is composed of a brave, a free, a virtuous, and an intelligent people. Our country abounds in the necessaries, the arts, and the comforts of life. A general prosperity is visible in the public countenance. The means employed by the British cabinet to undermine it have recoiled on themselves; have given to our national faculties a more rapid development, and, draining or diverting the precious metals from British circulation and British vaults, have poured them into those of the United States. It is a propitious consideration that an unavoidable war should have found this seasonable facility for the contributions required to support it. When the public voice called for war, all knew, and still know, that without them it could not be carried on through the period which it might last, and the patriotism, the good sense, and the manly spirit of our fellow-citizens are pledges for the cheerfulness with which they will bear each his share of the common burden. To render the war short and its success sure, animated and systematic exertions alone are necessary, and the success of our arms now may long preserve our country from the necessity of another resort to them. Already have the gallant exploits of our naval heroes proved to the world our inherent capacity to maintain our rights on one element. If the reputation of our arms has been thrown under clouds on the other, presaging flashes of heroic enterprise assure us that nothing is wanting to correspondent triumphs there also but the discipline and habits which are in daily progress.
 
-$ JAMES MONORE 1	1817
+§ JAMES MONORE 1	1817
 
 I should be destitute of feeling if I was not deeply affected by the strong proof which my fellow-citizens have given me of their confidence in calling me to the high office whose functions I am about to assume. As the expression of their good opinion of my conduct in the public service, I derive from it a gratification which those who are conscious of having done all that they could to merit it can alone feel. MY sensibility is increased by a just estimate of the importance of the trust and of the nature and extent of its duties, with the proper discharge of which the highest interests of a great and free people are intimately connected. Conscious of my own deficiency, I cannot enter on these duties without great anxiety for the result. From a just responsibility I will never shrink, calculating with confidence that in my best efforts to promote the public welfare my motives will always be duly appreciated and my conduct be viewed with that candor and indulgence which I have experienced in other stations.
 
@@ -184,7 +184,7 @@ Never did a government commence under auspices so favorable, nor ever was succes
 
 In the Administrations of the illustrious men who have preceded me in this high station, with some of whom I have been connected by the closest ties from early life, examples are presented which will always be found highly instructive and useful to their successors. From these I shall endeavor to derive all the advantages which they may afford. Of my immediate predecessor, under whom so important a portion of this great and successful experiment has been made, I shall be pardoned for expressing my earnest wishes that he may long enjoy in his retirement the affections of a grateful country, the best reward of exalted talents and the most faithful and meritorious service. Relying on the aid to be derived from the other departments of the Government, I enter on the trust to which I have been called by the suffrages of my fellow-citizens with my fervent prayers to the Almighty that He will be graciously pleased to continue to us that protection which He has already so conspicuously displayed in our favor.
 
-$ JAMES MONROE 2	1821
+§ JAMES MONROE 2	1821
 
 Fellow-Citizens:
 
@@ -242,7 +242,7 @@ Our physical attainments have not been less eminent. Twenty-five years ago the r
 
 Entering with these views the office which I have just solemnly sworn to execute with fidelity and to the utmost of my ability, I derive great satisfaction from a knowledge that I shall be assisted in the several Departments by the very enlightened and upright citizens from whom I have received so much aid in the preceding term. With full confidence in the continuance of that candor and generous indulgence from my fellow-citizens at large which I have heretofore experienced, and with a firm reliance on the protection of Almighty God, I shall forthwith commence the duties of the high trust to which you have called me.
 
-$ JOHN QUINCY ADAMS	1825
+§ JOHN QUINCY ADAMS	1825
 
 In compliance with an usage coeval with the existence of our Federal Constitution, and sanctioned by the example of my predecessors in the career upon which I am about to enter, I appear, my fellow-citizens, in your presence and in that of Heaven to bind myself by the solemnities of religious obligation to the faithful performance of the duties allotted to me in the station to which I have been called.
 
@@ -264,7 +264,7 @@ In this brief outline of the promise and performance of my immediate predecessor
 
 Fellow-citizens, you are acquainted with the peculiar circumstances of the recent election, which have resulted in affording me the opportunity of addressing you at this time. You have heard the exposition of the principles which will direct me in the fulfillment of the high and solemn trust imposed upon me in this station. Less possessed of your confidence in advance than any of my predecessors, I am deeply conscious of the prospect that I shall stand more and oftener in need of your indulgence. Intentions upright and pure, a heart devoted to the welfare of our country, and the unceasing application of all the faculties allotted to me to her service are all the pledges that I can give for the faithful performance of the arduous duties I am to undertake. To the guidance of the legislative councils, to the assistance of the executive and subordinate departments, to the friendly cooperation of the respective State governments, to the candid and liberal support of the people so far as it may be deserved by honest industry and zeal, I shall look for whatever success may attend my public service; and knowing that "except the Lord keep the city the watchman waketh but in vain," with fervent supplications for His favor, to His overruling providence I commit with humble but fearless confidence my own fate and the future destinies of my country.
 
-$ ANDREW JACKSON 1	1829
+§ ANDREW JACKSON 1	1829
 
 Fellow-Citizens:
 
@@ -292,7 +292,7 @@ In the performance of a task thus generally delineated I shall endeavor to selec
 
 A diffidence, perhaps too just, in my own qualifications will teach me to look with reverence to the examples of public virtue left by my illustrious predecessors, and with veneration to the lights that flow from the mind that founded and the mind that reformed our system. The same diffidence induces me to hope for instruction and aid from the coordinate branches of the Government, and for the indulgence and support of my fellow-citizens generally. And a firm reliance on the goodness of that Power whose providence mercifully protected our national infancy, and has since upheld our liberties in various vicissitudes, encourages me to offer up my ardent supplications that He will continue to make our beloved country the object of His divine care and gracious benediction.
 
-$ ANDREW JACKSON 2	1833
+§ ANDREW JACKSON 2	1833
 
 Fellow-Citizens:
 
@@ -314,7 +314,7 @@ Deeply impressed with the truth of these observations, and under the obligation 
 
 Finally, it is my most fervent prayer to that Almighty Being before whom I now stand, and who has kept us in His hands from the infancy of our Republic to the present day, that He will so overrule all my intentions and actions and inspire the hearts of my fellow-citizens that we may be preserved from dangers of all kinds and continue forever a united and happy people.
 
-$ MARTIN VAN BUREN	1837
+§ MARTIN VAN BUREN	1837
 
 Fellow-Citizens:
 
@@ -356,7 +356,7 @@ In approaching, then, in the presence of my assembled countrymen, to make the so
 
 In receiving from the people the sacred trust twice confided to my illustrious predecessor, and which he has discharged so faithfully and so well, I know that I can not expect to perform the arduous task with equal ability and success. But united as I have been in his counsels, a daily witness of his exclusive and unsurpassed devotion to his country's welfare, agreeing with him in sentiments which his countrymen have warmly supported, and permitted to partake largely of his confidence, I may hope that somewhat of the same cheering approbation will be found to attend upon my path. For him I but express with my own the wishes of all, that he may yet long live to enjoy the brilliant evening of his well-spent life; and for myself, conscious of but one desire, faithfully to serve my country, I throw myself without fear on its justice and its kindness. Beyond that I only look to the gracious protection of the Divine Being whose strengthening support I humbly solicit, and whom I fervently pray to look down upon us all. May it be among the dispensations of His providence to bless our beloved country with honors and with length of days. May her ways be ways of pleasantness and all her paths be peace!
 
-$ WILLIAM HENRY HARRISON	1841
+§ WILLIAM HENRY HARRISON	1841
 
 Called from a retirement which I had supposed was to continue for the residue of my life to fill the chief executive office of this great and free nation, I appear before you, fellow-citizens, to take the oaths which the Constitution prescribes as a necessary qualification for the performance of its duties; and in obedience to a custom coeval with our Government and what I believe to be your expectations I proceed to present to you a summary of the principles which will govern me in the discharge of the duties which I shall be called upon to perform.
 
@@ -408,7 +408,7 @@ I deem the present occasion sufficiently important and solemn to justify me in e
 
 Fellow-citizens, being fully invested with that high office to which the partiality of my countrymen has called me, I now take an affectionate leave of you. You will bear with you to your homes the remembrance of the pledge I have this day given to discharge all the high duties of my exalted station according to the best of my ability, and I shall enter upon their performance with entire confidence in the support of a just and generous people.
 
-$ JAMES KNOX POLK	1845
+§ JAMES KNOX POLK	1845
 
 Fellow-Citizens:
 
@@ -472,7 +472,7 @@ Although in our country the Chief Magistrate must almost of necessity be chosen 
 
 Confidently relying upon the aid and assistance of the coordinate departments of the Government in conducting our public affairs, I enter upon the discharge of the high duties which have been assigned me by the people, again humbly supplicating that Divine Being who has watched over and protected our beloved country from its infancy to the present hour to continue His gracious benedictions upon us, that we may continue to be a prosperous and happy people.
 
-$ ZACHARY TAYLOR	1849
+§ ZACHARY TAYLOR	1849
 
 Elected by the American people to the highest office known to our laws, I appear here to take the oath prescribed by the Constitution, and, in compliance with a time-honored custom, to address those who are now assembled.
 
@@ -494,7 +494,7 @@ It shall be my study to recommend such constitutional measures to Congress as ma
 
 In conclusion I congratulate you, my fellow-citizens, upon the high state of prosperity to which the goodness of Divine Providence has conducted our common country. Let us invoke a continuance of the same protecting care which has led us from small beginnings to the eminence we this day occupy, and let us seek to deserve that continuance by prudence and moderation in our councils, by well-directed attempts to assuage the bitterness which too often marks unavoidable differences of opinion, by the promulgation and practice of just and liberal principles, and by an enlarged patriotism, which shall acknowledge no limits but those of our own widespread Republic.
 
-$ FRANKLIN PIERCE	1853
+§ FRANKLIN PIERCE	1853
 
 My Countrymen:
 
@@ -526,7 +526,7 @@ But let not the foundation of our hope rest upon man's wisdom. It will not be su
 
 We have been carried in safety through a perilous crisis. Wise counsels, like those which gave us the Constitution, prevailed to uphold it. Let the period be remembered as an admonition, and not as an encouragement, in any section of the Union, to make experiments where experiments are fraught with such fearful hazard. Let it be impressed upon all hearts that, beautiful as our fabric is, no earthly power or wisdom could ever reunite its broken fragments. Standing, as I do, almost within view of the green slopes of Monticello, and, as it were, within reach of the tomb of Washington, with all the cherished memories of the past gathering around me like so many eloquent voices of exhortation from heaven, I can express no better hope for my country than that the kind Providence which smiled upon our fathers may enable their children to preserve the blessings they have inherited.
 
-$ JAMES BUCHANAN	1857
+§ JAMES BUCHANAN	1857
 
 Fellow-Citizens:
 
@@ -572,7 +572,7 @@ It is our glory that whilst other nations have extended their dominions by the s
 
 I shall now proceed to take the oath prescribed by the Constitution, whilst humbly invoking the blessing of Divine Providence on this great people.
 
-$ ABRAHAM LINCOLN 1	1861
+§ ABRAHAM LINCOLN 1	1861
 
 Fellow-Citizens of the United States:
 
@@ -652,7 +652,7 @@ In your hands, my dissatisfied fellow-countrymen, and not in mine, is the moment
 
 I am loath to close. We are not enemies, but friends. We must not be enemies. Though passion may have strained it must not break our bonds of affection. The mystic chords of memory, stretching from every battlefield and patriot grave to every living heart and hearthstone all over this broad land, will yet swell the chorus of the Union, when again touched, as surely they will be, by the better angels of our nature.
 
-$ ABRAHAM LINCOLN 2 1865
+§ ABRAHAM LINCOLN 2 1865
 
 
 Fellow-Countrymen:
@@ -663,7 +663,7 @@ On the occasion corresponding to this four years ago all thoughts were anxiously
 
 One-eighth of the whole population were colored slaves, not distributed generally over the Union, but localized in the southern part of it. These slaves constituted a peculiar and powerful interest. All knew that this interest was somehow the cause of the war. To strengthen, perpetuate, and extend this interest was the object for which the insurgents would rend the Union even by war, while the Government claimed no right to do more than to restrict the territorial enlargement of it. Neither party expected for the war the magnitude or the duration which it has already attained. Neither anticipated that the cause of the conflict might cease with or even before the conflict itself should cease. Each looked for an easier triumph, and a result less fundamental and astounding. Both read the same Bible and pray to the same God, and each invokes His aid against the other. It may seem strange that any men should dare to ask a just God's assistance in wringing their bread from the sweat of other men's faces, but let us judge not, that we be not judged. The prayers of both could not be answered. That of neither has been answered fully. The Almighty has His own purposes. "Woe unto the world because of offenses; for it must needs be that offenses come, but woe to that man by whom the offense cometh". If we shall suppose that American slavery is one of those offenses which, in the providence of God, must needs come, but which, having continued through His appointed time, He now wills to remove, and that He gives to both North and South this terrible war as the woe due to those by whom the offense came, shall we discern therein any departure from those divine attributes which the believers in a living God always ascribe to Him? Fondly do we hope, fervently do we pray, that this mighty scourge of war may speedily pass away. Yet, if God wills that it continue until all the wealth piled by the bondsman's two hundred and fifty years of unrequited toil shall be sunk, and until every drop of blood drawn with the lash shall be paid by another drawn with the sword, as was said three thousand years ago, so still it must be said "the judgments of the Lord are true and righteous altogether". With malice toward none, with charity for all, with firmness in the right as God gives us to see the right, let us strive on to finish the work we are in, to bind up the nation's wounds, to care for him who shall have borne the battle and for his widow and his orphan, to do all which may achieve and cherish a just and lasting peace among ourselves and with all nations.
 
-$ ULYSSES S. GRANT 1	1869
+§ ULYSSES S. GRANT 1	1869
 
 Citizens of the United States:
 
@@ -695,7 +695,7 @@ The question of suffrage is one which is likely to agitate the public so long as
 
 In conclusion I ask patient forbearance one toward another throughout the land, and a determined effort on the part of every citizen to do his share toward cementing a happy union; and I ask the prayers of the nation to Almighty God in behalf of this consummation.
 
-$ ULYSSES S. GRANT 2	1873
+§ ULYSSES S. GRANT 2	1873
 
 Fellow-Citizens:
 
@@ -731,7 +731,7 @@ I did not ask for place or position, and was entirely without influence or the a
 
 Notwithstanding this, throughout the war, and from my candidacy for my present office in 1868 to the close of the last Presidential campaign, I have been the subject of abuse and slander scarcely ever equaled in political history, which to-day I feel that I can afford to disregard in view of your verdict, which I gratefully accept as my vindication.
 
-$ RUTHERFORD B. HAYES	1877
+§ RUTHERFORD B. HAYES	1877
 
 Fellow-Citizens:
 
@@ -789,7 +789,7 @@ It has been reserved for a government of the people, where the right of suffrage
 
 Looking for the guidance of that Divine Hand by which the destinies of nations and individuals are shaped, I call upon you, Senators, Representatives, judges, fellow-citizens, here and everywhere, to unite with me in an earnest effort to secure to our country the blessings, not only of material prosperity, but of justice, peace, and union�a union depending not upon the constraint of force, but upon the loving devotion of a free people; "and that all things may be so ordered and settled upon the best and surest foundations that peace and happiness, truth and justice, religion and piety, may be established among us for all generations".
 
-$ JAMES A. GARFIELD	1881
+§ JAMES A. GARFIELD	1881
 
 Fellow-Citizens:
 
@@ -869,7 +869,7 @@ And now, fellow-citizens, I am about to assume the great trust which you have co
 
 I shall greatly rely upon the wisdom and patriotism of Congress and of those who may share with me the responsibilities and duties of administration, and, above all, upon our efforts to promote the welfare of this great people and their Government I reverently invoke the support and blessings of Almighty God.
 
-$ GROVER CLEVELAND	1885
+§ GROVER CLEVELAND	1885
 
 Fellow-Citizens:
 
@@ -909,7 +909,7 @@ In the administration of a government pledged to do equal and exact justice to a
 
 These topics and the constant and ever-varying wants of an active and enterprising population may well receive the attention and the patriotic endeavor of all who make and execute the Federal law. Our duties are practical and call for industrious application, an intelligent perception of the claims of public office, and, above all, a firm determination, by united action, to secure to all the people of the land the full benefits of the best form of government ever vouchsafed to man. And let us not trust to human effort alone, but humbly acknowledging the power and goodness of Almighty God, who presides over the destiny of nations, and who has at all times been revealed in our country's history, let us invoke His aid and His blessings upon our labors.
 
-$ BENJAMIN HARRISON	1889
+§ BENJAMIN HARRISON	1889
 
 Fellow-Citizens:
 
@@ -983,7 +983,7 @@ No other people have a government more worthy of their respect and love or a lan
 
 I do not mistrust the future. Dangers have been in frequent ambush along our path, but we have uncovered and vanquished them all. Passion has swept some of our communities, but only to give us a new demonstration that the great body of our people are stable, patriotic, and law-abiding. No political party can long pursue advantage at the expense of public honor or by rude and indecent methods without protest and fatal disaffection in its own body. The peaceful agencies of commerce are more fully revealing the necessary unity of all our communities, and the increasing intercourse of our people is promoting mutual respect. We shall find unalloyed pleasure in the revelation which our next census will make of the swift development of the great resources of some of the States. Each State will bring its generous contribution to the great aggregate of the nation's increase. And when the harvests from the fields, the cattle from the hills, and the ores of the earth shall have been weighed, counted, and valued, we will turn from them all to crown with the highest honor the State that has most promoted education, virtue, justice, and patriotism among its people.
 
-$ GROVER CLEVELAND 2	1893
+§ GROVER CLEVELAND 2	1893
 
 My Fellow-Citizens:
 
@@ -1039,7 +1039,7 @@ I find also much comfort in remembering that my countrymen are just and generous
 
 Above all, I know there is a Supreme Being who rules the affairs of men and whose goodness and mercy have always followed the American people, and I know He will not turn from us now if we humbly and reverently seek His powerful aid.
 
-$ WILLIAM MCKINLEY 1	1897
+§ WILLIAM MCKINLEY 1	1897
 
 Fellow-Citizens:
 
@@ -1081,7 +1081,7 @@ Let us rejoice in and cultivate this spirit; it is ennobling and will be both a 
 
 Let me again repeat the words of the oath administered by the Chief Justice which, in their respective spheres, so far as applicable, I would have all my countrymen observe: "I will faithfully execute the office of President of the United States, and will, to the best of my ability, preserve, protect, and defend the Constitution of the United States". This is the obligation I have reverently taken before the Lord Most High. To keep it will be my single purpose, my constant prayer; and I shall confidently rely upon the forbearance and assistance of all the people in the discharge of my solemn responsibilities.
 
-$ WILLIAM MCKINLEY 2	1901
+§ WILLIAM MCKINLEY 2	1901
 
 My Fellow-Citizens:
 
@@ -1109,7 +1109,7 @@ The peace which we are pledged to leave to the Cuban people must carry with it t
 
 While the treaty of peace with Spain was ratified on the 6th of February, 1899, and ratifications were exchanged nearly two years ago, the Congress has indicated no form of government for the Philippine Islands. It has, however, provided an army to enable the Executive to suppress insurrection, restore peace, give security to the inhabitants, and establish the authority of the United States throughout the archipelago. It has authorized the organization of native troops as auxiliary to the regular force. It has been advised from time to time of the acts of the military and naval officers in the islands, of my action in appointing civil commissions, of the instructions with which they were charged, of their duties and powers, of their recommendations, and of their several acts under executive commission, together with the very complete general information they have submitted. These reports fully set forth the conditions, past and present, in the islands, and the instructions clearly show the principles which will guide the Executive until the Congress shall, as it is required to do by the treaty, determine "the civil rights and political status of the native inhabitants". The Congress having added the sanction of its authority to the powers already possessed and exercised by the Executive under the Constitution, thereby leaving with the Executive the responsibility for the government of the Philippines, I shall continue the efforts already begun until order shall be restored throughout the islands, and as fast as conditions permit will establish local governments, in the formation of which the full co-operation of the people has been already invited, and when established will encourage the people to administer them. The settled purpose, long ago proclaimed, to afford the inhabitants of the islands self-government as fast as they were ready for it will be pursued with earnestness and fidelity. Already something has been accomplished in this direction. The Government's representatives, civil and military, are doing faithful and noble work in their mission of emancipation and merit the approval and support of their countrymen. The most liberal terms of amnesty have already been communicated to the insurgents, and the way is still open for those who have raised their arms against the Government for honorable submission to its authority. Our countrymen should not be deceived. We are not waging war against the inhabitants of the Philippine Islands. A portion of them are making war against the United States. By far the greater part of the inhabitants recognize American sovereignty and welcome it as a guaranty of order and of security for life, property, liberty, freedom of conscience, and the pursuit of happiness. To them full protection will be given. They shall not be abandoned. We will not leave the destiny of the loyal millions the islands to the disloyal thousands who are in rebellion against the United States. Order under civil institutions will come as soon as those who now break the peace shall keep it. Force will not be needed or used when those who make war against us shall make it no more. May it end without further bloodshed, and there be ushered in the reign of peace to be made permanent by a government of liberty under law!
 
-$ THEODORE ROOSEVELT	1905
+§ THEODORE ROOSEVELT	1905
 
 My fellow-citizens, no people on earth have more cause to be thankful than ours, and this is said reverently, in no spirit of boastfulness in our own strength, but with gratitude to the Giver of Good who has blessed us with the conditions which have enabled us to achieve so large a measure of well-being and of happiness. To us as a people it has been granted to lay the foundations of our national life in a new continent. We are the heirs of the ages, and yet we have had to pay few of the penalties which in old countries are exacted by the dead hand of a bygone civilization. We have not been obliged to fight for our existence against any alien race; and yet our life has called for the vigor and effort without which the manlier and hardier virtues wither away. Under such conditions it would be our own fault if we failed; and the success which we have had in the past, the success which we confidently believe the future will bring, should cause in us no feeling of vainglory, but rather a deep and abiding realization of all which life has offered us; a full acknowledgment of the responsibility which is ours; and a fixed determination to show that under a free government a mighty people can thrive best, alike as regards the things of the body and the things of the soul.
 
@@ -1119,7 +1119,7 @@ Our relations with the other powers of the world are important; but still more i
 
 Yet, after all, though the problems are new, though the tasks set before us differ from the tasks set before our fathers who founded and preserved this Republic, the spirit in which these tasks must be undertaken and these problems faced, if our duty is to be well done, remains essentially unchanged. We know that self-government is difficult. We know that no people needs such high traits of character as that people which seeks to govern its affairs aright through the freely expressed will of the freemen who compose it. But we have faith that we shall not prove false to the memories of the men of the mighty past. They did their work, they left us the splendid heritage we now enjoy. We in our turn have an assured confidence that we shall be able to leave this heritage unwasted and enlarged to our children and our children's children. To do so we must show, not merely in great crises, but in the everyday affairs of life, the qualities of practical intelligence, of courage, of hardihood, and endurance, and above all the power of devotion to a lofty ideal, which made great the men who founded this Republic in the days of Washington, which made great the men who preserved this Republic in the days of Abraham Lincoln.
 
-$ WILLIAM HOWARD TAFT	1909
+§ WILLIAM HOWARD TAFT	1909
 
 My Fellow-Citizens:
 
@@ -1209,7 +1209,7 @@ The issue of a temporary restraining order without notice has in several instanc
 
 Having thus reviewed the questions likely to recur during my administration, and having expressed in a summary way the position which I expect to take in recommendations to Congress and in my conduct as an Executive, I invoke the considerate sympathy and support of my fellow-citizens and the aid of the Almighty God in the discharge of my responsible duties.
 
-$ WOODROW WILSON 1	1913
+§ WOODROW WILSON 1	1913
 
 There has been a change of government. It began two years ago, when the House of Representatives became Democratic by a decisive majority. It has now been completed. The Senate about to assemble will also be Democratic. The offices of President and Vice-President have been put into the hands of Democrats. What does the change mean? That is the question that is uppermost in our minds to-day. That is the question I am going to try to answer, in order, if I may, to interpret the occasion.
 
@@ -1233,7 +1233,7 @@ And yet it will be no cool process of mere science. The Nation has been deeply s
 
 This is not a day of triumph; it is a day of dedication. Here muster, not the forces of party, but the forces of humanity. Men's hearts wait upon us; men's lives hang in the balance; men's hopes call upon us to say what we will do. Who shall live up to the great trust? Who dares fail to try? I summon all honest men, all patriotic, all forward-looking men, to my side. God helping me, I will not fail them, if they will but counsel and sustain me!
 
-$ WOODROW WILSON 2	1917
+§ WOODROW WILSON 2	1917
 
 My Fellow Citizens:
 
@@ -1271,7 +1271,7 @@ United alike in the conception of our duty and in the high resolve to perform it
 
 The shadows that now lie dark upon our path will soon be dispelled, and we shall walk with the light all about us if we be but true to ourselves�to ourselves as we have wished to be known in the counsels of the world and in the thought of all those who love liberty and justice and the right exalted.
 
-$ WARREN G. HARDING	1921
+§ WARREN G. HARDING	1921
 
 My Countrymen:
 
@@ -1341,7 +1341,7 @@ I accept my part with single-mindedness of purpose and humility of spirit, and i
 
 I have taken the solemn oath of office on that passage of Holy Writ wherein it is asked: "What doth the Lord require of thee but to do justly, and to love mercy, and to walk humbly with thy God?" This I plight to God and country.
 
-$ CALVIN COOLIDGE	1925
+§ CALVIN COOLIDGE	1925
 
 My Countrymen:
 
@@ -1437,7 +1437,7 @@ These are some of the principles which America represents. We have not by any me
 
 It is in such contemplations, my fellow countrymen, which are not exhaustive but only representative, that I find ample warrant for satisfaction and encouragement. We should not let the much that is to do obscure the much which has been done. The past and present show faith and hope and courage fully justified. Here stands our country, an example of tranquillity at home, a patron of tranquillity abroad. Here stands its Government, aware of its might but obedient to its conscience. Here it will continue to stand, seeking peace and prosperity, solicitous for the welfare of the wage earner, promoting enterprise, developing waterways and natural resources, attentive to the intuitive counsel of womanhood, encouraging education, desiring the advancement of religion, supporting the cause of justice and honor among the nations. America seeks no earthly empire built on blood and force. No ambition, no temptation, lures her to thought of foreign dominions. The legions which she sends forth are armed, not with the sword, but with the cross. The higher state to which she seeks the allegiance of all mankind is not of human, but of divine origin. She cherishes no purpose save to merit the favor of Almighty God.
 
-$ HERBERT HOOVER	1929
+§ HERBERT HOOVER	1929
 
 My Countrymen:
 
@@ -1535,7 +1535,7 @@ Ours is a land rich in resources; stimulating in its glorious beauty; filled wit
 
 In the presence of my countrymen, mindful of the solemnity of this occasion, knowing what the task means and the responsibility which it involves, I beg your tolerance, your aid, and your cooperation. I ask the help of Almighty God in this service to my country to which you have called me.
 
-$ FRANKLIN D. ROOSEVELT 1	1933
+§ FRANKLIN D. ROOSEVELT 1	1933
 
 I am certain that my fellow Americans expect that on my induction into the Presidency I will address them with a candor and a decision which the present situation of our Nation impels. This is preeminently the time to speak the truth, the whole truth, frankly and boldly. Nor need we shrink from honestly facing conditions in our country today. This great Nation will endure as it has endured, will revive and will prosper. So, first of all, let me assert my firm belief that the only thing we have to fear is fear itself�nameless, unreasoning, unjustified terror which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life a leadership of frankness and vigor has met with that understanding and support of the people themselves which is essential to victory. I am convinced that you will again give that support to leadership in these critical days.
 
@@ -1589,7 +1589,7 @@ We do not distrust the future of essential democracy. The people of the United S
 
 In this dedication of a Nation we humbly ask the blessing of God. May He protect each and every one of us. May He guide me in the days to come.
 
-$ FRANKLIN D. ROOSEVELT 2	1937
+§ FRANKLIN D. ROOSEVELT 2	1937
 
 When four years ago we met to inaugurate a President, the Republic, single-minded in anxiety, stood in spirit here. We dedicated ourselves to the fulfillment of a vision�to speed the time when there would be for all the people that security and peace essential to the pursuit of happiness. We of the Republic pledged ourselves to drive from the temple of our ancient faith those who had profaned it; to end by action, tireless and unafraid, the stagnation and despair of that day. We did those first things first.
 
@@ -1665,7 +1665,7 @@ In taking again the oath of office as President of the United States, I assume t
 
 While this duty rests upon me I shall do my utmost to speak their purpose and to do their will, seeking Divine guidance to help us each and every one to give light to them that sit in darkness and to guide our feet into the way of peace.
 
-$ FRANKLIN D. ROOSEVELT 3	1941
+§ FRANKLIN D. ROOSEVELT 3	1941
 
 On each national day of inauguration since 1789, the people have renewed their sense of dedication to the United States.
 
@@ -1741,7 +1741,7 @@ For this we muster the spirit of America, and the faith of America.
 
 We do not retreat. We are not content to stand still. As Americans, we go forward, in the service of our country, by the will of God.
 
-$ FRANKLIN D. ROOSEVELT 4	1945
+§ FRANKLIN D. ROOSEVELT 4	1945
 
 Mr. Chief Justice, Mr. Vice President, my friends, you will understand and, I believe, agree with my wish that the form of this inauguration be simple and its words brief.
 
@@ -1775,7 +1775,7 @@ The Almighty God has blessed our land in many ways. He has given our people stou
 
 So we pray to Him now for the vision to see our way clearly�to see the way that leads to a better life for ourselves and for all our fellow men�to the achievement of His will to peace on earth.
 
-$ HARRY S. TRUMAN	1949
+§ HARRY S. TRUMAN	1949
 
 Mr. Vice President, Mr. Chief Justice, and fellow citizens, I accept with humility the honor which the American people have conferred upon me. I accept it with a deep resolve to do all that I can for the welfare of this Nation and for the peace of the world.
 
@@ -1913,7 +1913,7 @@ Steadfast in our faith in the Almighty, we will advance toward a world where man
 
 To that end we will devote our strength, our resources, and our firmness of resolve. With God's help, the future of mankind will be assured in a world of justice, harmony, and peace.
 
-$ DWIGHT D. EISENHOWER 1	1953
+§ DWIGHT D. EISENHOWER 1	1953
 
 My friends, before I begin the expression of those thoughts that I deem appropriate to this moment, would you permit me the privilege of uttering a little private prayer of my own. And I ask that you bow your heads:
 
@@ -2021,7 +2021,7 @@ The peace we seek, then, is nothing less than the practice and fulfillment of ou
 
 This is the hope that beckons us onward in this century of trial. This is the work that awaits us all, to be done with bravery, with charity, and with prayer to Almighty God.
 
-$ DWIGHT D. EISENHOWER 2	1957
+§ DWIGHT D. EISENHOWER 2	1957
 
 THE PRICE OF PEACE
 
@@ -2105,7 +2105,7 @@ May the light of freedom, coming to all darkened lands, flame brightly�until a
 
 May the turbulence of our age yield to a true time of peace, when men and nations shall share a life that honors the dignity of each, the brotherhood of all.
 
-$ JOHN F. KENNEDY	1961
+§ JOHN F. KENNEDY	1961
 
 Vice President Johnson, Mr. Speaker, Mr. Chief Justice, President Eisenhower, Vice President Nixon, President Truman, reverend clergy, fellow citizens, we observe today not a victory of party, but a celebration of freedom�symbolizing an end, as well as a beginning�signifying renewal, as well as change. For I have sworn before you and Almighty God the same solemn oath our forebears prescribed nearly a century and three quarters ago.
 
@@ -2161,7 +2161,7 @@ My fellow citizens of the world: ask not what America will do for you, but what 
 
 Finally, whether you are citizens of America or citizens of the world, ask of us the same high standards of strength and sacrifice which we ask of you. With a good conscience our only sure reward, with history the final judge of our deeds, let us go forth to lead the land we love, asking His blessing and His help, but knowing that here on earth God's work must truly be our own.
 
-$ LYNDON BAINES JOHNSON	1965
+§ LYNDON BAINES JOHNSON	1965
 
 My fellow countrymen, on this occasion, the oath I have taken before you and before God is not mine alone, but ours together. We are one nation and one people. Our fate as a nation and our future as a people rest not upon one citizen, but upon all citizens.
 
@@ -2241,7 +2241,7 @@ But you must look within your own hearts to the old promises and to the old drea
 
 For myself, I ask only, in the words of an ancient leader: "Give me now wisdom and knowledge, that I may go out and come in before this people: for who can judge this thy people, that is so great?"
 
-$ RICHARD MILHOUS NIXON 1	1969
+§ RICHARD MILHOUS NIXON 1	1969
 
 Senator Dirksen, Mr. Chief Justice, Mr. Vice President, President Johnson, Vice President Humphrey, my fellow Americans�and my fellow citizens of the world community:
 
@@ -2397,7 +2397,7 @@ We have endured a long night of the American spirit. But as our eyes catch the d
 
 Our destiny offers, not the cup of despair, but the chalice of opportunity. So let us seize it, not in fear, but in gladness�and, "riders on the earth together," let us go forward, firm in our faith, steadfast in our purpose, cautious of the dangers; but sustained by our confidence in the will of God and the promise of man.
 
-$ RICHARD MILHOUS NIXON 2	1973
+§ RICHARD MILHOUS NIXON 2	1973
 
 Mr. Vice President, Mr. Speaker, Mr. Chief Justice, Senator Cook, Mrs. Eisenhower, and my fellow citizens of this great and good country we share together:
 
@@ -2501,7 +2501,7 @@ Let us pledge together to make these next four years the best four years in Amer
 
 Let us go forward from here confident in hope, strong in our faith in one another, sustained by our faith in God who created us, and striving always to serve His purpose.
 
-$ JIMMY CARTER	1977
+§ JIMMY CARTER	1977
 
 For myself and for our Nation, I want to thank my predecessor for all he has done to heal our land.
 
@@ -2567,7 +2567,7 @@ I would hope that the nations of the world might say that we had built a lasting
 
 These are not just my goals, and they will not be my accomplishments, but the affirmation of our Nation's continuing moral strength and our belief in an undiminished, ever-expanding American dream.
 
-$ RONALD W. REAGAN 1	1981
+§ RONALD W. REAGAN 1	1981
 
 Senator Hatfield, Mr. Chief Justice, Mr. President, Vice President Bush, Vice President Mondale, Senator Baker, Speaker O'Neill, Reverend Moomaw, and my fellow citizens: To a few of us here today, this is a solemn and most momentous occasion; and yet, in the history of our Nation, it is a commonplace occurrence. The orderly transfer of authority as called for in the Constitution routinely takes place as it has for almost two centuries and few of us stop to think how unique we really are. In the eyes of many in the world, this every-4-year ceremony we accept as normal is nothing less than a miracle.
 
@@ -2647,7 +2647,7 @@ The crisis we are facing today does not require of us the kind of sacrifice that
 
 And, after all, why shouldn't we believe that? We are Americans. God bless you, and thank you.
 
-$ RONALD W. REAGAN 2	1985
+§ RONALD W. REAGAN 2	1985
 
 Senator Mathias, Chief Justice Burger, Vice President Bush, Speaker O'Neill, Senator Dole, Reverend Clergy, members of my family and friends, and my fellow citizens:
 
@@ -2735,7 +2735,7 @@ It is the American sound. It is hopeful, big-hearted, idealistic, daring, decent
 
 God bless you and may God bless America.
 
-$ GEORGE H. W. BUSH	1989
+§ GEORGE H. W. BUSH	1989
 
 Mr. Chief Justice, Mr. President, Vice President Quayle, Senator Mitchell, Speaker Wright, Senator Dole, Congressman Michel, and fellow citizens, neighbors, and friends:
 
@@ -2795,7 +2795,7 @@ Some see leadership as high drama, and the sound of trumpets calling, and someti
 
 Thank you. God bless you and God bless the United States of America.
 
-$ WILLIAN JEFFERSON CLINTON 1	1993
+§ WILLIAN JEFFERSON CLINTON 1	1993
 
 My fellow citizens:
 
@@ -2831,7 +2831,7 @@ And so, my fellow Americans, as we stand at the edge of the 21st Century, let us
 
 Thank you, and God bless you all.
 
-$ WILLIAM JEFFERSON CLINTON 2	1997
+§ WILLIAM JEFFERSON CLINTON 2	1997
 
 My fellow citizens:
 
@@ -2903,7 +2903,7 @@ May those generations whose faces we cannot yet see, whose names we may never kn
 
 From the height of this place and the summit of this century, let us go forth. May God strengthen our hands for the good work ahead�and always, always bless our America.
 
-$ GEORGE W. BUSH 1	2001
+§ GEORGE W. BUSH 1	2001
 
 President Clinton, distinguished guests and my fellow citizens, the peaceful transfer of authority is rare in history, yet common in our country. With a simple oath, we affirm old traditions and make new beginnings.
 
@@ -3003,7 +3003,7 @@ This work continues. This story goes on. And an angel still rides in the whirlwi
 
 God bless you all, and God bless America.
 
-$ GEORGE W. BUSH 2	2005
+§ GEORGE W. BUSH 2	2005
 
 Vice President Cheney, Mr. Chief Justice, President Carter, President Bush, President Clinton, reverend clergy, distinguished guests, fellow citizens:
 
@@ -3069,7 +3069,7 @@ When the Declaration of Independence was first read in public and the Liberty Be
 
 May God bless you, and may He watch over the United States of America.
 
-$ BARACK H. OBAMA 1	2009
+§ BARACK H. OBAMA 1	2009
 
 My fellow citizens:
 
@@ -3143,7 +3143,7 @@ Thank you. God bless you.
 
 And God bless the United States of America.
 
-$ BARACK H. OBAMA 2	2013
+§ BARACK H. OBAMA 2	2013
 
 Vice President Biden, Mr. Chief Justice, Members of the United States Congress, distinguished guests, and fellow citizens:
 
@@ -3173,7 +3173,7 @@ Vice President Biden, Mr. Chief Justice, Members of the United States Congress, 
   Let us each of us now embrace, with solemn duty and awesome joy, what is our lasting birthright. With common effort and common purpose, with passion and dedication, let us answer the call of history, and carry into an uncertain future that precious light of freedom.
   Thank you, God Bless you, and may He forever bless these United States of America.
 
-$ DONALD J. TRUMP	2017
+§ DONALD J. TRUMP	2017
 
 Chief Justice Roberts, President Carter, President Clinton, President Bush, President Obama, fellow Americans and people of the world, thank you.
   We, the citizens of America, are now joined in a great national effort to rebuild our country and restore its promise for all of our people. Together we will determine the course of America and the world for many, many years to come.
@@ -3204,7 +3204,7 @@ Chief Justice Roberts, President Carter, President Clinton, President Bush, Pres
   Thank you. God bless you. And God bless America.
   Thank you. God bless America.
 
-$ JOESPH R. BIDEN JR.	2021
+§ JOESPH R. BIDEN JR.	2021
 
 Chief Justice Roberts, Vice President Harris.
 
@@ -3302,4 +3302,4 @@ So, with purpose and result, we turn to those tasks of our time, sustained by fa
 
 Thank you, America.
 
-$
+§
