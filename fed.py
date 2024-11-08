@@ -13,4 +13,22 @@ for f in fed[1:len(fed)]:
         by_author["Jay"].append(title[0])
     elif title[2] == "DISPUTED":
         by_author["Disputed"].append(title[0])
-print(by_author)
+# print(by_author)
+
+author_words = {"Hamilton":{}, "Madison":{}, "Jay":{}, "Disputed":{}}
+
+for a in by_author:
+    for i in by_author[a]:
+        # paper = fed[i].split(" ")
+        pass
+
+exceptions = ["'", ",","—","."]
+
+fed_clean = (fed[1].replace("\n", " ")).split(" ")
+for i in fed_clean:
+    print(i)
+    # if i == "":
+    #     print(i)
+        # fed_clean = fed_clean.remove(fed_clean.index(i))
+
+# print(fed_clean)
