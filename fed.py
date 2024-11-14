@@ -22,13 +22,16 @@ for a in by_author:
         # paper = fed[i].split(" ")
         pass
 
-exceptions = ["'", ",","—","."]
+exceptions = ["'", ",","—",".", "(", ")"]
 
 fed_clean = (fed[1].replace("\n", " ")).split(" ")
 for i in fed_clean:
-    print(i)
-    # if i == "":
-    #     print(i)
-        # fed_clean = fed_clean.remove(fed_clean.index(i))
+    # print(i)
+    for o in exceptions:
+        if o in i:
+            # print(i)
+            pass
+    if i[-1] ==")" and i[-3] =="(":
+        print(i)
 
 # print(fed_clean)
