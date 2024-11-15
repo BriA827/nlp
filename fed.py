@@ -6,32 +6,81 @@ for f in fed[1:len(fed)]:
     f = f.split(" ")
     title = f[1].split('\n')
     if title[2] == "HAMILTON":
-        by_author["Hamilton"].append(title[0])
+        by_author["Hamilton"].append(int(title[0]))
     elif title[2] == "MADISON":
-        by_author["Madison"].append(title[0])
+        by_author["Madison"].append(int(title[0]))
     elif title[2] == "JAY":
-        by_author["Jay"].append(title[0])
+        by_author["Jay"].append(int(title[0]))
     elif title[2] == "DISPUTED":
-        by_author["Disputed"].append(title[0])
+        by_author["Disputed"].append(int(title[0]))
+
 # print(by_author)
 
-author_words = {"Hamilton":{}, "Madison":{}, "Jay":{}, "Disputed":{}}
+################################################
 
-for a in by_author:
-    for i in by_author[a]:
-        # paper = fed[i].split(" ")
-        pass
+def clean(paper, indicies):
+    exceptions = ["'", ",","—","."]
+    paren = ["(", ")"]
+    all_words = []
 
-exceptions = ["'", ",","—",".", "(", ")"]
+    for i in range(0,len(indicies)):
+        first_pass = (paper[indicies[i]].replace("\n", " ")).split(" ")
+        full_words= []
+        for i in first_pass:
+            i = i.lower()
+            for o in exceptions:
+                if o in i:
+                    la = i.index(o)
+                    i = i[0:la]
+                    full_words.append(i)
+            for p in paren:
+                if p in i:
+                    la = i.index(p)
+                    if la == 0:
+                        i = i[1:]
+                        full_words.append(i)
+                    else:
+                        i = i[0:la]
+                        full_words.append(i)
+            else:
+                full_words.append(i)
+        all_words.append(full_words)
+    return all_words
 
-fed_clean = (fed[1].replace("\n", " ")).split(" ")
-for i in fed_clean:
-    # print(i)
-    for o in exceptions:
-        if o in i:
-            # print(i)
+def distinct(words):
+    dist_words = []
+    for w in words:
+        if w in dist_words:
             pass
-    if i[-1] ==")" and i[-3] =="(":
-        print(i)
+        elif w == "":
+            pass
+        else:
+            dist_words.append(w)
+    return(dist_words)
 
-# print(fed_clean)
+def count_words(words):
+    counting = {}
+    dist_words = distinct(words)
+
+    for d in dis_words:
+        counting[d] = 0
+
+    for w in words:
+        counting[w] += 1
+
+    print(counting)
+
+###################################################
+
+# author_words = {"Hamilton":{}, "Madison":{}, "Jay":{}, "Disputed":{}}
+
+ham_words = clean(fed, by_author["Hamilton"])
+mad_words = clean(fed, by_author["Madison"])
+jay_words = clean(fed, by_author["Jay"])
+dis_words = clean(fed, by_author["Disputed"])
+
+# count_words(dis_words)
+
+# print(distinct(dis_words))
+
+print(dis_words)
