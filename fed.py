@@ -1,3 +1,5 @@
+import copy
+
 feds = open("fed_papers.txt", "r")
 fed = feds.read().split("FEDERALIST No.")
 
@@ -19,7 +21,7 @@ for f in fed[1:len(fed)]:
 ################################################
 
 def clean(paper, indicies):
-    exceptions = ["'", ",","—","."]
+    exceptions = ["'", "\"", ",","—",".", ";", ":", "?", "!"]
     paren = ["(", ")"]
     all_words = []
 
@@ -31,7 +33,10 @@ def clean(paper, indicies):
             for o in exceptions:
                 if o in i:
                     la = i.index(o)
-                    i = i[0:la]
+                    if la == 0:
+                       i = i[1:] 
+                    else:
+                        i = i[0:la]
                     full_words.append(i)
             for p in paren:
                 if p in i:
@@ -44,7 +49,8 @@ def clean(paper, indicies):
                         full_words.append(i)
             else:
                 full_words.append(i)
-        all_words.append(full_words[5:])
+        for w in full_words[5:]:
+            all_words.append(w)
     return all_words
 
 def distinct(words):
@@ -60,15 +66,27 @@ def distinct(words):
 
 def count_words(words):
     counting = {}
-    dist_words = distinct(words)
+    dis_words = distinct(words)
 
-    for d in dis_words[0]:
+    for d in dis_words:
         counting[d] = 0
 
-    for w in words[0]:
-        counting[w] += 1
+    for w in words:
+        if w == "":
+            pass
+        else:
+            counting[w] += 1
 
-    print(counting)
+    return counting
+
+def merge_dicts(d1, d2):
+    merged = copy.deepcopy(d1)
+    for key in d2:
+        if key in merged:
+            merged[key] += d2[key]
+        else:
+            merged[key] = d2[key]
+    return merged
 
 ###################################################
 
@@ -79,8 +97,10 @@ mad_words = clean(fed, by_author["Madison"])
 jay_words = clean(fed, by_author["Jay"])
 dis_words = clean(fed, by_author["Disputed"])
 
-count_words(jay_words)
+ham_count = count_words(ham_words)
+mad_count = count_words(mad_words)
+jay_count = count_words(jay_words)
+dis_count = count_words(dis_words)
 
-# print(distinct(jay_words))
-
-# print(jay_words)
+jay_merged = merge_dicts(jay_count, dis_count)
+print(jay_merged)
