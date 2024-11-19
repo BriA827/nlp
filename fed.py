@@ -44,7 +44,7 @@ def clean(paper, indicies):
                         full_words.append(i)
             else:
                 full_words.append(i)
-        all_words.append(full_words)
+        all_words.append(full_words[5:])
     return all_words
 
 def distinct(words):
@@ -62,10 +62,10 @@ def count_words(words):
     counting = {}
     dist_words = distinct(words)
 
-    for d in dis_words:
+    for d in dis_words[0]:
         counting[d] = 0
 
-    for w in words:
+    for w in words[0]:
         counting[w] += 1
 
     print(counting)
@@ -79,8 +79,8 @@ mad_words = clean(fed, by_author["Madison"])
 jay_words = clean(fed, by_author["Jay"])
 dis_words = clean(fed, by_author["Disputed"])
 
-# count_words(dis_words)
+count_words(jay_words)
 
-# print(distinct(dis_words))
+# print(distinct(jay_words))
 
-print(dis_words)
+# print(jay_words)
