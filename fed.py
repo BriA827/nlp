@@ -1,4 +1,5 @@
 import copy
+import operator
 
 feds = open("fed_papers.txt", "r")
 fed = feds.read().split("FEDERALIST No.")
@@ -88,6 +89,21 @@ def merge_dicts(d1, d2):
             merged[key] = d2[key]
     return merged
 
+def dict_tuple(dic, k):
+    t = list(dic.items())
+    sort = sorted(t, key=operator.itemgetter(k), reverse=True)
+    return sort
+
+def c_sq(auth_d, dis_d):
+    auth_d = count_words(auth_d)
+    dis_d = count_words(dis_d)
+    auth_tup = dict_tuple(auth_d, 1)
+    dis_tup = dict_tuple(dis_d, 1)
+    merge_tup = dict_tuple(merge_dicts(auth_d, dis_d), 1)
+
+    chi_sq = 0
+    
+
 ###################################################
 
 # author_words = {"Hamilton":{}, "Madison":{}, "Jay":{}, "Disputed":{}}
@@ -97,10 +113,4 @@ mad_words = clean(fed, by_author["Madison"])
 jay_words = clean(fed, by_author["Jay"])
 dis_words = clean(fed, by_author["Disputed"])
 
-ham_count = count_words(ham_words)
-mad_count = count_words(mad_words)
-jay_count = count_words(jay_words)
-dis_count = count_words(dis_words)
-
-jay_merged = merge_dicts(jay_count, dis_count)
-print(jay_merged)
+c_sq(ham_words, dis_words)
