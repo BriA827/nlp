@@ -24,6 +24,7 @@ for f in fed[1:len(fed)]:
 def clean(paper, indicies):
     exceptions = ["'", "\"", ",","—",".", ";", ":", "?", "!"]
     paren = ["(", ")"]
+    dash = "--"
     all_words = []
 
     for i in range(0,len(indicies)):
@@ -31,23 +32,24 @@ def clean(paper, indicies):
         full_words= []
         for i in first_pass:
             i = i.lower()
-            for o in exceptions:
-                if o in i:
-                    la = i.index(o)
-                    if la == 0:
-                       i = i[1:] 
-                    else:
-                        i = i[0:la]
-                    full_words.append(i)
-            for p in paren:
-                if p in i:
-                    la = i.index(p)
-                    if la == 0:
-                        i = i[1:]
-                        full_words.append(i)
-                    else:
-                        i = i[0:la]
-                        full_words.append(i)
+            s
+            # for o in exceptions:
+            #     if o in i:
+            #         la = i.index(o)
+            #         if la == 0:
+            #            i = i[1:] 
+            #         else:
+            #             i = i[0:la]
+            #         full_words.append(i)
+            # for p in paren:
+            #     if p in i:
+            #         la = i.index(p)
+            #         if la == 0:
+            #             i = i[1:]
+            #             full_words.append(i)
+            #         else:
+            #             i = i[0:la]
+            #             full_words.append(i)
             else:
                 full_words.append(i)
         for w in full_words[5:]:
@@ -94,15 +96,21 @@ def dict_tuple(dic, k):
     sort = sorted(t, key=operator.itemgetter(k), reverse=True)
     return sort
 
-def c_sq(auth_d, dis_d):
-    auth_d = count_words(auth_d)
-    dis_d = count_words(dis_d)
-    auth_tup = dict_tuple(auth_d, 1)
-    dis_tup = dict_tuple(dis_d, 1)
-    merge_tup = dict_tuple(merge_dicts(auth_d, dis_d), 1)
+def c_sq(auth, dis):
+    auth_d = count_words(auth) # gets the word count for auther
+    dis_d = count_words(dis) #word count for disputed
+    auth_tup = dict_tuple(auth_d, 1) #tuple for author words
+    dis_tup = dict_tuple(dis_d, 1) #tuple for disputed words
+    merge_tup = dict_tuple(merge_dicts(auth_d, dis_d), 1) #tuple for author and disputed
 
     chi_sq = 0
     
+    # for word in merge_tup[0:1]:
+    #     print(word)
+    #     for w in auth_tup:
+    #         print(w[0])
+
+    print(auth_d)
 
 ###################################################
 
@@ -113,4 +121,4 @@ mad_words = clean(fed, by_author["Madison"])
 jay_words = clean(fed, by_author["Jay"])
 dis_words = clean(fed, by_author["Disputed"])
 
-c_sq(ham_words, dis_words)
+c_sq(jay_words, dis_words)
