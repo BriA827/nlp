@@ -39,4 +39,21 @@ for i in vader.split('\n'):
     i = i.split('\t')
     vad_dict[i[0]] = i[1]
 
-print(debate)
+speakers = {}
+
+for en in debate:
+    parts = en.split(":")
+    if len(parts) > 1:
+        name=parts[0]
+        if name == 'PARTICIPANTS' or name == "MODERATORS":
+            pass
+        elif name not in speakers:
+            speakers[name] = {"indexes":[], "polar":[]}
+        elif name in speakers:
+            speakers[name]['indexes'].append(debate.indexx(en))
+
+pun = [".", "?", "!"]
+exception = ["Mr.", "Ms.", "Mrs."]
+exceptions = ["'", ",","—",".", "--"]
+
+print(speakers)
