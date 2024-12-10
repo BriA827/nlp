@@ -22,6 +22,26 @@ def file_read(file, lines = False):
         f = f.read()
     return f
 
+def sentence_list_speaker(speaker, db, dict, index_key):
+    sentences = []
+    for i in dict[speaker][index_key]:
+        sentences.append((((db[i].split(": "))[1]).split("\n"))[0])
+    return sentences
+
+def pol_per_sentence(sentence, pos_list, neg_list):
+    p = []
+    n = []
+    print(sentence)
+    sentence = sentence.split()
+    for word in sentence:
+        for wp in pos_list:
+            if word == wp:
+                p.append(word)
+        for wn in neg_list:
+            if word == wn:
+                n.append(word)
+    print(sentence)
+    print(p,n)
 ####################################################################
 
 pos = file_read("sen_files/positive_words.txt")
@@ -41,19 +61,26 @@ for i in vader.split('\n'):
 
 speakers = {}
 
-for en in debate:
+debate_sens = debate[7:]
+
+for i in debate_sens:
+    if i == "\n":
+        debate_sens.remove(i)
+
+for en in debate_sens:
     parts = en.split(":")
     if len(parts) > 1:
         name=parts[0]
-        if name == 'PARTICIPANTS' or name == "MODERATORS":
-            pass
-        elif name not in speakers:
+        if name not in speakers:
             speakers[name] = {"indexes":[], "polar":[]}
         elif name in speakers:
-            speakers[name]['indexes'].append(debate.indexx(en))
+            speakers[name]['indexes'].append(debate_sens.index(en))
 
-pun = [".", "?", "!"]
-exception = ["Mr.", "Ms.", "Mrs."]
-exceptions = ["'", ",","—",".", "--"]
+muir = sentence_list_speaker("MUIR", debate_sens, speakers, "indexes")
+davis = sentence_list_speaker("DAVIS", debate_sens, speakers, "indexes")
+harris = sentence_list_speaker("HARRIS", debate_sens, speakers, "indexes")
+trump = sentence_list_speaker("TRUMP", debate_sens, speakers, "indexes")
+
+# pol_per_sentence(muir[0], pos_words, neg_words)
 
 print(speakers)
