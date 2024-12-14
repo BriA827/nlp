@@ -28,21 +28,56 @@ def sentence_list_speaker(speaker, db, dict, index_key):
         sentences.append((((db[i].split(": "))[1]).split("\n"))[0])
     return sentences
 
-def pol_per_sentence(sentence, pos_list, neg_list):
+def normalize(x, a):
+    norm = (x)/(((x**2) + a)**(1/2))
+    return norm
+
+def pol_per_sentence(sentence, pos_list, neg_list, vad):
     p = []
     n = []
-    print(sentence)
+    pol = 0
     sentence = sentence.split()
     for word in sentence:
+        p_n = None
+        for vad_word in vad:
+            if word == vad_word:
+                pol += float(vad[vad_word])
+                if float(vad[vad_word]) > 0:
+                    p_n = True
+                else:
+                    p_n = False
         for wp in pos_list:
             if word == wp:
-                p.append(word)
+                pol += .293
         for wn in neg_list:
             if word == wn:
-                n.append(word)
-    print(sentence)
-    print(p,n)
+                pol -= .293
+        count = 0
+        for l in word:
+            if l.isupper():
+                count +=1
+            if count == len(word):
+                if p_n == True:
+                    pol += .293
+                else:
+                    pol -= .293
+        if word[-1] == "!":
+            if pol > 0:
+                pol += .293
+            else:
+                pol -= .293
+    norm_pol = normalize(pol, 15)
+    return norm_pol
+
+def pol_speaker(speaker):
+    pol_list = []
+    for i in range(0, len(speaker)):
+        polarity = pol_per_sentence(speaker[i], pos_words, neg_words, vad_dict)
+        pol_list.append(polarity)
+    return pol_list
 ####################################################################
+
+negation_words = ["no", "not", "nothing", "never", "none", "nowhere", "neither", "nobody"]
 
 pos = file_read("sen_files/positive_words.txt")
 neg = file_read("sen_files/negative_words.txt")
@@ -73,14 +108,26 @@ for en in debate_sens:
         name=parts[0]
         if name not in speakers:
             speakers[name] = {"indexes":[], "polar":[]}
+            speakers[name]['indexes'].append(debate_sens.index(en))
         elif name in speakers:
             speakers[name]['indexes'].append(debate_sens.index(en))
 
-muir = sentence_list_speaker("MUIR", debate_sens, speakers, "indexes")
-davis = sentence_list_speaker("DAVIS", debate_sens, speakers, "indexes")
 harris = sentence_list_speaker("HARRIS", debate_sens, speakers, "indexes")
 trump = sentence_list_speaker("TRUMP", debate_sens, speakers, "indexes")
 
-# pol_per_sentence(muir[0], pos_words, neg_words)
+# harris_pol = pol_speaker(harris)
+# print(harris_pol)
+harris_sentences = []
 
-print(speakers)
+
+print(harris[-1])
+
+pun = [".", "?", "!"]
+exception = ["Mr.", "Ms.", "Mrs."]
+for word in harris[-1].split():
+    if word in exception:
+        pass
+    elif word[-1] in pun:
+        pt1 = harris[-1][0:harris.index(word)]
+        print(word)
+    print(word)
