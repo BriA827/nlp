@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plt
+
+####################################################
+
 def get_stopwords() :
     stop_words = [ "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "as", \
                    "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can","could", \
@@ -32,13 +36,18 @@ def normalize(x, a):
     norm = (x)/(((x**2) + a)**(1/2))
     return norm
 
-def pol_per_sentence(sentence, pos_list, neg_list, vad):
-    p = []
-    n = []
+def pol_per_sentence(sentence, pos_list, neg_list, vad, negate):
+    pun = [".", "?", "!"]
+    flips = [",", ";", ":"]
     pol = 0
-    sentence = sentence.split()
-    for word in sentence:
+    negation = False
+    for word_og in sentence:
         p_n = None
+        for i in word_og:
+            if i in pun or i in flips and "$" not in word_og and not word_og.isupper():
+                word = word[0:word.index(i)]
+            else:
+                word = word_og
         for vad_word in vad:
             if word == vad_word:
                 pol += float(vad[vad_word])
@@ -52,33 +61,47 @@ def pol_per_sentence(sentence, pos_list, neg_list, vad):
         for wn in neg_list:
             if word == wn:
                 pol -= .293
-        count = 0
-        for l in word:
-            if l.isupper():
-                count +=1
-            if count == len(word):
-                if p_n == True:
-                    pol += .293
-                else:
-                    pol -= .293
-        if word[-1] == "!":
+        for w_negate in negate:
+            if word == w_negate:
+                negation = True
+
+        #this works to add polarity for all caps
+        #but because this is a debate and not a post, ive removed it
+
+        #count = 0
+        # for l in word:
+        #     if l.isupper():
+        #         count +=1
+        #     if count == len(word) and len(word) > 1:
+        #         if p_n == True:
+        #             pol += .293
+        #         else:
+        #             pol -= .293
+
+        if word_og[-1] == "!":
             if pol > 0:
                 pol += .293
             else:
                 pol -= .293
+        
+    if negation == True:
+        pol = pol * -1
+        negation = False
+        
     norm_pol = normalize(pol, 15)
     return norm_pol
 
 def pol_speaker(speaker):
     pol_list = []
     for i in range(0, len(speaker)):
-        polarity = pol_per_sentence(speaker[i], pos_words, neg_words, vad_dict)
+        polarity= pol_per_sentence(speaker[i], pos_words, neg_words, vad_dict, negation_words)
         pol_list.append(polarity)
     return pol_list
 
 def all_chunks(chunks):
     all_sentences = []
     pun = [".", "?", "!"]
+    flips = [",", ";", ":"]
     exception = ["Mr.", "Ms.", "Mrs."]
 
     for ch in chunks:
@@ -95,7 +118,7 @@ def all_chunks(chunks):
                 all_sentences.append(splice)
 
                 for w in splice:
-                    if w[-1] ==",":
+                    if w[-1] in flips and "$" not in w:
                         try:
                             all_sentences.remove(splice)
                         except:
@@ -104,6 +127,30 @@ def all_chunks(chunks):
                         comma_counter  = splice.index(w) +1
 
     return all_sentences
+
+def graph_pol(pol_list, candidate):
+    p = {}
+    n = {}
+    m = {}
+    styles = ["g*-", "r*-", "b*-"]
+    for i in range(0, len(pol_list)):
+        if pol_list[i] > 0.05:
+            p[i] = pol_list[i]
+        elif pol_list[i] < -0.05:
+            n[i] = pol_list[i]
+        else:
+            m[i] = pol_list[i]
+
+    plt.title(f"{candidate} Polarity")
+    plt.xlabel("Sentence Index")
+    plt.ylabel("Normalized Polarity")
+    plt.grid()
+    for i in [p,n,m]:
+        plt.plot(i.keys(), i.values(), styles[[p,n,m].index(i)])
+    plt.show()
+
+def pie_pol(pol_list, candidate):
+    labels = ["Positive", "Negative", "Neutral"]
 
 ####################################################################
 
@@ -148,5 +195,12 @@ trump = sentence_list_speaker("TRUMP", debate_sens, speakers, "indexes")
 harris_full = all_chunks(harris)
 trump_full = all_chunks(trump)
 
-harris_pol = pol_speaker(harris_full)
-print(harris_pol)
+harris_pol= pol_speaker(harris_full)
+trump_pol= pol_speaker(trump_full)
+
+# print(len(harris_full), len(harris_pol)) #485
+# print(len(trump_full), len(trump_pol)) # 989
+
+# print(harris_pol)
+
+# graph_pol(harris_pol, "Harris")
