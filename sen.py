@@ -75,6 +75,36 @@ def pol_speaker(speaker):
         polarity = pol_per_sentence(speaker[i], pos_words, neg_words, vad_dict)
         pol_list.append(polarity)
     return pol_list
+
+def all_chunks(chunks):
+    all_sentences = []
+    pun = [".", "?", "!"]
+    exception = ["Mr.", "Ms.", "Mrs."]
+
+    for ch in chunks:
+        test = ch.split()
+        index_counter = 0
+        comma_counter = 0
+        for word in test:
+            if word in exception:
+                pass
+
+            elif word[-1] in pun and not word.isupper():
+                splice = (test[index_counter:test.index(word) +1])
+                index_counter = test.index(word) + 1
+                all_sentences.append(splice)
+
+                for w in splice:
+                    if w[-1] ==",":
+                        try:
+                            all_sentences.remove(splice)
+                        except:
+                            pass
+                        all_sentences.append(splice[comma_counter:splice.index(w)+1])
+                        comma_counter  = splice.index(w) +1
+
+    return all_sentences
+
 ####################################################################
 
 negation_words = ["no", "not", "nothing", "never", "none", "nowhere", "neither", "nobody"]
@@ -115,19 +145,8 @@ for en in debate_sens:
 harris = sentence_list_speaker("HARRIS", debate_sens, speakers, "indexes")
 trump = sentence_list_speaker("TRUMP", debate_sens, speakers, "indexes")
 
-# harris_pol = pol_speaker(harris)
-# print(harris_pol)
-harris_sentences = []
+harris_full = all_chunks(harris)
+trump_full = all_chunks(trump)
 
-
-print(harris[-1])
-
-pun = [".", "?", "!"]
-exception = ["Mr.", "Ms.", "Mrs."]
-for word in harris[-1].split():
-    if word in exception:
-        pass
-    elif word[-1] in pun:
-        pt1 = harris[-1][0:harris.index(word)]
-        print(word)
-    print(word)
+harris_pol = pol_speaker(harris_full)
+print(harris_pol)
