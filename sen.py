@@ -41,6 +41,7 @@ def pol_per_sentence(sentence, pos_list, neg_list, vad, negate):
     flips = [",", ";", ":"]
     pol = 0
     negation = False
+    print(sentence)
     for word_og in sentence:
         p_n = None
         for i in word_og:
@@ -100,11 +101,16 @@ def pol_speaker(speaker):
 
 def all_chunks(chunks):
     all_sentences = []
+    comma_list = []
     pun = [".", "?", "!"]
     flips = [",", ";", ":"]
     exception = ["Mr.", "Ms.", "Mrs."]
 
     for ch in chunks:
+        if "[" in ch:
+            first = ch.index("[")
+            last = ch.index("]")
+            ch = ch.replace(ch[first:last+1], "")
         test = ch.split()
         index_counter = 0
         comma_counter = 0
@@ -116,17 +122,27 @@ def all_chunks(chunks):
                 splice = (test[index_counter:test.index(word) +1])
                 index_counter = test.index(word) + 1
                 all_sentences.append(splice)
-
                 for w in splice:
                     if w[-1] in flips and "$" not in w:
                         try:
                             all_sentences.remove(splice)
                         except:
                             pass
-                        all_sentences.append(splice[comma_counter:splice.index(w)+1])
+                        comma_list.append(splice[comma_counter:splice.index(w)+1])
                         comma_counter  = splice.index(w) +1
+        if comma_list:
+            all_sentences.append(comma_list)
+            comma_list = []
 
     return all_sentences
+
+# def str_complie(list_str):
+#     string = ""
+
+#     for i in list_str:
+#         string = string + i
+
+#     return string
 
 def graph_pol(pol_list, candidate):
     p = {}
@@ -193,10 +209,10 @@ harris = sentence_list_speaker("HARRIS", debate_sens, speakers, "indexes")
 trump = sentence_list_speaker("TRUMP", debate_sens, speakers, "indexes")
 
 harris_full = all_chunks(harris)
-trump_full = all_chunks(trump)
+# trump_full = all_chunks(trump)
 
 harris_pol= pol_speaker(harris_full)
-trump_pol= pol_speaker(trump_full)
+# trump_pol= pol_speaker(trump_full)
 
 # print(len(harris_full), len(harris_pol)) #485
 # print(len(trump_full), len(trump_pol)) # 989
