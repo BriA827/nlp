@@ -1,22 +1,26 @@
 import matplotlib.pyplot as plt
+import math
+import statistics as stat
 
 ####################################################
 
-def get_stopwords() :
-    stop_words = [ "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "as", \
-                   "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can","could", \
-                   "did", "do", "does", "doing", "done", "down", "during", "each", "few", "for", "from", "further", "had", "has",\
-                   "have", "having", "he", "he'd", "he'll", "he's", "her", "here", "here's", "hers", "herself", "him", \
-                   "himself", "his", "how", "how's", "i", "i'd", "i'll", "i'm", "i've", "if", "in", "into", "is", "it",\
-                   "it's", "its", "itself", "just","let's", "me", "more", "most", "my", "myself", "nor", "of", "on", "once", \
-                   "only", "or", "other", "ought", "our", "ours", "ourselves", "out", "over", "own", "same", "she", \
-                   "she'd", "she'll", "she's", "should", "so", "some", "such", "than", "that", "that's", "the", "their",\
-                   "theirs", "them", "themselves", "then", "there", "there's", "these", "they", "they'd", "they'll", \
-                   "they're", "they've", "this", "those", "through", "to", "too", "under", "until", "up", "very", "was",\
-                   "we", "we'd", "we'll", "we're", "we've", "were", "what", "what's", "when", "when's", "where", \
-                   "where's", "which", "while", "who", "who's", "whom", "will","why", "why's", "with", "would", "you", "you'd",\
-                   "you'll", "you're", "you've", "your", "yours", "yourself", "yourselves" ]
-    return(stop_words)
+def mean(data):
+    sum = 0
+    for val in data:
+        sum += val
+    average = sum/len(data)
+    return average
+
+def variance(data):
+    sum = 0
+    for num in data:
+        sum += (num - mean(data))**2
+    vari = sum/len(data)
+    return vari
+
+def stand_dev(data):
+    de = math.sqrt(variance(data))
+    return de
 
 def file_read(file, lines = False):
     f = open(file, "r")
@@ -36,12 +40,12 @@ def normalize(x, a):
     norm = (x)/(((x**2) + a)**(1/2))
     return norm
 
-def pol_per_sentence(sentence, pos_list, neg_list, vad, negate):
+def pol_calc(sentence, pos_list, neg_list, vad, negate, dim):
     pun = [".", "?", "!"]
     flips = [",", ";", ":"]
-    pol = 0
     negation = False
-    print(sentence)
+    diminish = False
+    pol = 0
     for word_og in sentence:
         p_n = None
         for i in word_og:
@@ -51,7 +55,11 @@ def pol_per_sentence(sentence, pos_list, neg_list, vad, negate):
                 word = word_og
         for vad_word in vad:
             if word == vad_word:
-                pol += float(vad[vad_word])
+                if diminish:
+                    pol += (float(vad[vad_word])) * .2
+                    diminish = False
+                else:
+                    pol += float(vad[vad_word])
                 if float(vad[vad_word]) > 0:
                     p_n = True
                 else:
@@ -65,6 +73,10 @@ def pol_per_sentence(sentence, pos_list, neg_list, vad, negate):
         for w_negate in negate:
             if word == w_negate:
                 negation = True
+        for wd in dim:
+            if word == wd:
+                diminish = True
+                
 
         #this works to add polarity for all caps
         #but because this is a debate and not a post, ive removed it
@@ -84,23 +96,51 @@ def pol_per_sentence(sentence, pos_list, neg_list, vad, negate):
                 pol += .293
             else:
                 pol -= .293
-        
+
     if negation == True:
         pol = pol * -1
         negation = False
-        
-    norm_pol = normalize(pol, 15)
+
+    return pol
+
+def pol_per_sentence(sentence, pos_list, neg_list, vad, negate, dim):
+    pun = [".", "?", "!"]
+    flips = [",", ";", ":"]
+    compound = False
+    negation = False
+
+    pieces = []
+    pols = 0
+
+    for i in flips:
+        for s in sentence:
+            if s[-1] == i:
+                compound = True
+                pieces.append(sentence[0:sentence.index(s)+1])
+                pieces.append(sentence[sentence.index(s)+1:])
+
+    if pieces:
+        for i in pieces:
+            sum_pol = pol_calc(i, pos_list, neg_list, vad, negate,dim)
+            pols += sum_pol
+
+    else:
+        pol_value = pol_calc(sentence, pos_list, neg_list, vad, negate,dim)
+        pols += pol_value
+
+    norm_pol = normalize(pols, 15)
     return norm_pol
 
 def pol_speaker(speaker):
     pol_list = []
     for i in range(0, len(speaker)):
-        polarity= pol_per_sentence(speaker[i], pos_words, neg_words, vad_dict, negation_words)
+        polarity= pol_per_sentence(speaker[i], pos_words, neg_words, vad_dict, negation_words, diminisher)
         pol_list.append(polarity)
     return pol_list
 
 def all_chunks(chunks):
     all_sentences = []
+    clean = []
     comma_list = []
     pun = [".", "?", "!"]
     flips = [",", ";", ":"]
@@ -122,19 +162,16 @@ def all_chunks(chunks):
                 splice = (test[index_counter:test.index(word) +1])
                 index_counter = test.index(word) + 1
                 all_sentences.append(splice)
-                for w in splice:
-                    if w[-1] in flips and "$" not in w:
-                        try:
-                            all_sentences.remove(splice)
-                        except:
-                            pass
-                        comma_list.append(splice[comma_counter:splice.index(w)+1])
-                        comma_counter  = splice.index(w) +1
+               
         if comma_list:
             all_sentences.append(comma_list)
             comma_list = []
 
-    return all_sentences
+    for i in all_sentences:
+        if i:
+            clean.append(i)
+
+    return clean
 
 # def str_complie(list_str):
 #     string = ""
@@ -160,6 +197,7 @@ def graph_pol(pol_list, candidate):
     plt.title(f"{candidate} Polarity")
     plt.xlabel("Sentence Index")
     plt.ylabel("Normalized Polarity")
+    plt.yticks([-1.00, -.75,-.50,-.25,0,.25,.50,.75,1.00])
     plt.grid()
     for i in [p,n,m]:
         plt.plot(i.keys(), i.values(), styles[[p,n,m].index(i)])
@@ -167,10 +205,41 @@ def graph_pol(pol_list, candidate):
 
 def pie_pol(pol_list, candidate):
     labels = ["Positive", "Negative", "Neutral"]
+    p = 0 
+    n = 0
+    m = 0
+    for i in range(0, len(pol_list)):
+        if pol_list[i] > 0.05:
+            p+=1
+        elif pol_list[i] < -0.05:
+            n+=1
+        else:
+            m+=1
+    sizes = [p,n,m]
+    fig,ax = plt.subplots()
+    plt.title(f"{candidate} Polarity Sentence Sentiment Percentages")
+    ax.pie(sizes,labels=labels, autopct='%1.1f%%', colors=['green', "red", "blue"])
+    plt.show()
+
+def stats(pols):
+    p = [] 
+    n = []
+
+    for i in range(0, len(pols)):
+        if pols[i] > 0.05:
+            p.append(pols[i])
+        elif pols[i] < -0.05:
+            n.append(pols[i])
+
+    pos = {"mean":mean(p), "std":stand_dev(p), "med":stat.median(p), 'max':max(p), "min":min(p)}
+    neg = {"mean":mean(n), "std":stand_dev(n), "med":stat.median(n), 'max':max(n), "min":min(n)}
+
+    return pos, neg
 
 ####################################################################
 
-negation_words = ["no", "not", "nothing", "never", "none", "nowhere", "neither", "nobody"]
+negation_words = ["no", "not", "rather", "couldn't", "wasn't", "didn't", "wouldn't", "shouldn't", "weren't", "don't", "doesn't", "haven't", "hasn't", "won't", "wont", "hadn't", "never", "none", "nobody", "nothing", "neither", "nor", "nowhere", "isn't", "can't", "cannot", "mustn't", "mightn't", "shan't", "without", "needn't"]
+diminisher = ["hardly", "less", "little", "rarely", "scarcely", "seldom"]
 
 pos = file_read("sen_files/positive_words.txt")
 neg = file_read("sen_files/negative_words.txt")
@@ -209,14 +278,24 @@ harris = sentence_list_speaker("HARRIS", debate_sens, speakers, "indexes")
 trump = sentence_list_speaker("TRUMP", debate_sens, speakers, "indexes")
 
 harris_full = all_chunks(harris)
-# trump_full = all_chunks(trump)
+trump_full = all_chunks(trump)
 
 harris_pol= pol_speaker(harris_full)
-# trump_pol= pol_speaker(trump_full)
+trump_pol= pol_speaker(trump_full)
 
-# print(len(harris_full), len(harris_pol)) #485
-# print(len(trump_full), len(trump_pol)) # 989
+# print(len(harris_full), len(harris_pol)) #298
+# print(len(trump_full), len(trump_pol)) # 627
 
-# print(harris_pol)
+graph_pol(harris_pol, "Harris")
+pie_pol(harris_pol, "Harris")
 
-# graph_pol(harris_pol, "Harris")
+harris_p, harris_n = stats(harris_pol)
+print(harris_p, harris_n)
+
+print("trump")
+
+graph_pol(trump_pol, "Trump")
+pie_pol(trump_pol, "Trump")
+
+trump_p, trump_n = stats(trump_pol)
+print(trump_p, trump_n)
