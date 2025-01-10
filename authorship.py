@@ -10,20 +10,29 @@ def file_read(file, lines = False):
 
 scarlet = file_read("Scarlet_Letter.txt", True)
 
-paras = []
-count = 0
+scar_dict = {}
+count = None
 
 for i in scarlet:
-    if len(i)>2:
-        scarlet[scarlet.index(i)] = i[0:-1]
+    if "Chapter" in i:
+        ind1 = i.index("C")
+        chap = i[ind1:]
+        ind2 = chap.index(".")
+        chap = chap[0:ind2]
+        scar_dict[chap] = ["", 0]
+        count = chap
+    else:
+        l = i.split("\n")
+        if "\n" not in l[0]:
+            line = l[0]
+            scar_dict[chap][0] = scar_dict[chap][0] + line
+            
+        elif "\n" not in l[1]:
+            line = l[0]
+            scar_dict[chap][0] = scar_dict[chap][0] + line
 
-    paras.append(scarlet[count:scarlet.index(i)])
-    count = scarlet.index(i) +1
-    
+        else:
+            scar_dict[chap][1] += 1
 
-
-# for i in scarlet:
-    
-#     print(type(i), i)
-
-print(paras)
+tst = "Chapter I THE CUSTOMHOUSE"
+print(scar_dict[tst])
