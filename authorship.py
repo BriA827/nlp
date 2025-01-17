@@ -1,3 +1,7 @@
+import math
+
+###########################################
+
 def file_read(file, lines = False):
     f = open(file, "r")
     if lines == True:
@@ -6,43 +10,91 @@ def file_read(file, lines = False):
         f = f.read()
     return f
 
+def variance(data, m):
+    sum = 0
+    for num in data:
+        sum += (num - m)**2
+    vari = sum/len(data)
+    return vari
+
+def stand_dev(data):
+    de = math.sqrt(variance(data))
+    return de
+
+def book_dict(file, chapter, end):
+    f_dict = {}
+    count = None
+    p = None
+
+    for i in file:
+        if chapter in i:
+            ind1 = i.index("C")
+            chap = i[ind1:]
+            ind2 = chap.index(end)
+            chap = chap[0:ind2]
+            chap_l = chap.split(" ")
+            cnt = chap_l[0] + " " + chap_l[1]
+
+            f_dict[cnt] = {"title": chap_l, "paras":[]}
+            count = cnt
+
+        else:
+            if "\n" in i:
+                i = i.split("\n")
+                i = i[0]
+
+            if i != "":
+                if p == None:
+                    p = i
+                else:
+                    p = p + " " + i
+
+            else:
+                if p == None:
+                    pass
+                else:
+                    f_dict[count]['paras'].append(p)
+                    p = None
+
+    
+    return f_dict
+
+def sen_par(file):
+    pun = [".", "!", "?"]
+    m = 0
+    for i in file.keys():
+        para_count = len(file[i]["paras"])
+        sen_count = 0
+
+def word_par(file):
+    p = 0
+    w = 0
+    
+    for i in file.keys():
+        para_count = len(file[i]["paras"])
+        p+= para_count
+
+        for l in range(para_count):
+            w += len((file[i]["paras"][l]).split())
+    
+    return w/p
+
+def word_sen(file):
+    pass
+
+def comma_sen(file):
+    pass
+
 #########################################
 
 scarlet = file_read("Scarlet_Letter.txt", True)
-
-scar_dict = {}
-count = None
-p = None
-
-for i in scarlet:
-    if "Chapter" in i:
-        ind1 = i.index("C")
-        chap = i[ind1:]
-        ind2 = chap.index(".")
-        chap = chap[0:ind2]
-        chap_l = chap.split(" ")
-        cnt = chap_l[0] + " " + chap_l[1]
-
-        scar_dict[cnt] = {"title": chap_l, "paras":[]}
-        count = cnt
-
-    else:
-        if "\n" in i:
-            i = i.split("\n")
-            i = i[0]
-
-        if i != "":
-            if p == None:
-                p = i
-            else:
-                p = p + " " + i
-
-        else:
-            if p == None:
-                pass
-            else:
-                scar_dict[count]['paras'].append(p)
-                p = None
+great = file_read("Great_Expectations.txt", True)
 
 tst = "Chapter I"
-print(scar_dict[tst]['paras'])
+scar_dict = book_dict(scarlet, "Chapter", ".")
+great_dict = book_dict(great, "Chapter", "\n")
+
+scar_wp = word_par(scar_dict)
+great_wp = word_par(great_dict)
+print(scar_wp, great_wp)
+
