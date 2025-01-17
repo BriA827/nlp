@@ -67,9 +67,9 @@ def sen_par(file):
         sen_count = 0
 
 def word_par(file):
-    p = 0
     w = 0
-    
+    p = 0
+
     for i in file.keys():
         para_count = len(file[i]["paras"])
         p+= para_count
@@ -82,8 +82,20 @@ def word_par(file):
 def word_sen(file):
     pass
 
-def comma_sen(file):
-    pass
+def comma_par(file):
+    c = 0
+    p = 0
+
+    for i in file.keys():
+        para_count = len(file[i]["paras"])
+        p+= para_count
+
+        for l in range(para_count):
+            for m in file[i]["paras"][l]:
+                if "," in m:
+                    c += 1
+
+    return c/p
 
 #########################################
 
@@ -98,3 +110,6 @@ scar_wp = word_par(scar_dict)
 great_wp = word_par(great_dict)
 print(scar_wp, great_wp)
 
+scar_cp = comma_par(scar_dict)
+great_cp = comma_par(great_dict)
+print(scar_cp, great_cp)
