@@ -10,15 +10,15 @@ def file_read(file, lines = False):
         f = f.read()
     return f
 
-def variance(data):
+def variance(data, mean):
     sum = 0
     for num in data:
-        sum += (num - 1)**2
-    vari = sum/len(data)
+        sum += (num - mean)**2
+    vari = sum/(len(data)-1)
     return vari
 
-def stand_dev(data):
-    de = math.sqrt(variance(data))
+def stand_dev(data, mean):
+    de = math.sqrt(variance(data, mean))
     return de
 
 def book_dict(file, chapter, end):
@@ -60,64 +60,85 @@ def book_dict(file, chapter, end):
     return f_dict
 
 def sen_par(file):
-    pun = [".", "!", "?"]
-    m = 0
-    for i in file.keys():
-        para_count = len(file[i]["paras"])
-        sen_count = 0
-
-def word_par(file):
-    w = 0
+    pun = ["!", "?"]
+    exceptions = ["Mr."]
+    great = ["I", "Mr.", "Joe", "Camilla", "Biddy", "Wemmick's", "Herbert", "Miss", "Estella", "Pumblechook"]
+    sentence_list = []
     p = 0
 
     for i in file.keys():
         para_count = len(file[i]["paras"])
-        p+= para_count
+        p += para_count
+        s = 0
+        for l in file[i]["paras"]:
+            for m in range(len(l.split())):
+                for e in pun:
+                    if e in l.split()[m] and l.split()[m] not in exceptions:
+                        try:
+                            if l.split()[m][-1]=='"' and l.split()[m+1] in great:
+                                print(l.split()[m:m+7])
+                        except:
+                            # print(l.split()[m])
+                            pass
 
-        for l in range(para_count):
-            w += len((file[i]["paras"][l]).split())
+
+# def word_par(file):
+    # w = 0
+    # p = 0
+
+    # for i in file.keys():
+    #     para_count = len(file[i]["paras"])
+    #     p+= para_count
+
+    #     for l in range(para_count):
+    #         w += len((file[i]["paras"][l]).split())
     
-    return w/p
+    # return w/p
 
 # def word_sen(file):
 #     pass
 
 def comma_par(file):
     c_list = []
-    p_list = []
+    p = 0
 
     for i in file.keys():
         para_count = len(file[i]["paras"])
-        p_list.append(para_count)
+        p += para_count
         c = 0
 
         for l in range(para_count):
             for m in file[i]["paras"][l]:
                 if "," in m:
                     c += 1
-
         c_list.append(c)
 
-    s = []
-    for i in range(len(c_list)):
-        s.append(c_list[i]/p_list[i])
+    s = [i/p for i in c_list]
 
-    return sum(s)/len(s), stand_dev(c_list)
+    m = sum(c_list)/p
+    d = stand_dev(s, m)
+
+    return m, d
 
 def quotes_chap(file):
-    q = 0
+    q_list = []
     c = len(file)
     
     for i in file.keys():
-        for l in file[i]['paras']:
-            for w in l:
-                if "\"" in w:
-                    q += 1
+        q = 0
+        for l in range(len(file[i]["paras"])):
+            for m in file[i]["paras"][l]:
+                if '"' in m:
+                    q+=1
+        q_list.append(q/2)
 
-    return (q/2)/c
+    m = sum(q_list)/c
+    d = stand_dev(q_list, m)
+
+    return m, d
 
 #########################################
-#par comma, par sen, chap quote
+#par comma, sen par, chap quote
 
 scarlet = file_read("Scarlet_Letter.txt", True)
 great = file_read("Great_Expectations.txt", True)
@@ -125,14 +146,14 @@ great = file_read("Great_Expectations.txt", True)
 scar_dict = book_dict(scarlet, "Chapter", ".")
 great_dict = book_dict(great, "Chapter", "\n")
 
-scar_wp = word_par(scar_dict)
-great_wp = word_par(great_dict)
-# print(scar_wp, great_wp)
+sen_par(great_dict)
 
+#WORKS
 scar_cp = comma_par(scar_dict)
 great_cp = comma_par(great_dict)
-print(scar_cp, great_cp)
+# print(scar_cp, great_cp)
 
+#Works?
 scar_qc = quotes_chap(scar_dict)
 great_qc = quotes_chap(great_dict)
 # print(scar_qc, great_qc)
