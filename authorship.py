@@ -1,4 +1,6 @@
 import math
+import matplotlib.pyplot as plt
+from scipy.stats import norm
 
 ###########################################
 
@@ -60,9 +62,8 @@ def book_dict(file, chapter, end):
     return f_dict
 
 def sen_par(file):
-    pun = ["!", "?"]
+    pun = [".", "!", "?"]
     exceptions = ["Mr."]
-    great = ["I", "Mr.", "Joe", "Camilla", "Biddy", "Wemmick's", "Herbert", "Miss", "Estella", "Pumblechook"]
     sentence_list = []
     p = 0
 
@@ -75,12 +76,23 @@ def sen_par(file):
                 for e in pun:
                     if e in l.split()[m] and l.split()[m] not in exceptions:
                         try:
-                            if l.split()[m][-1]=='"' and l.split()[m+1] in great:
-                                print(l.split()[m:m+7])
+                            full = []
+                            if l.split()[m][-1]=='"':
+                                for n in l.split()[m+1:m+5]:
+                                    if "ed" not in n:
+                                        full.append(1)
+                            if sum(full) > 0:
+                                s+=1
                         except:
-                            # print(l.split()[m])
                             pass
+                        s+=1
+        sentence_list.append(s)
 
+    c = [i/p for i in sentence_list]
+
+    m = sum(sentence_list)/p
+    d = stand_dev(c,m)
+    return m,d, sentence_list
 
 # def word_par(file):
     # w = 0
@@ -118,7 +130,7 @@ def comma_par(file):
     m = sum(c_list)/p
     d = stand_dev(s, m)
 
-    return m, d
+    return m, d, c_list
 
 def quotes_chap(file):
     q_list = []
@@ -135,7 +147,67 @@ def quotes_chap(file):
     m = sum(q_list)/c
     d = stand_dev(q_list, m)
 
-    return m, d
+    return m, d, q_list
+
+def kfac(m1,m2,d1,d2):
+    t = abs(m2-m1)
+    b = ((1/2) *((d2**2) + (d1**2)))**.5
+    return t/b
+
+
+def gauss(mews, stnds):
+    ys = []
+    xs = [a for a in range(round(-2*stnds+mews), round(2*stnds+mews))]
+
+    for i in range(0,len(xs)):
+        y = ((1)/(stnds* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((xs[i]-mews)/stnds)**2)))
+        ys.append(y)
+
+    return xs, ys, mews, stnds
+
+def gauss_plot(data, title, m, d):
+    x = []
+    y = []
+    mew = []
+    stnd = []
+
+    lines_x =[]
+    lines_y = []
+
+    for i in range(len(data)):
+        vs = gauss(m[i], d[i])
+        x.append(vs[0])
+        y.append(vs[1])
+        mew.append(vs[2])
+        stnd.append(vs[3])
+
+        lines_x.append(vs[2])
+        lines_x.append(-2*vs[3]+vs[2])
+        lines_x.append(2*vs[3]+vs[2])
+
+        for n in range(len(lines_x)):
+            j = ((1)/(vs[3] * math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((lines_x[i]-vs[2])/vs[3])**2)))
+            lines_y.append(j)
+
+    k = round(kfac(m[0], m[1], d[0], d[1]), 2)
+    plt.text(0,0,f"K-Factor: {k}")
+
+    plt.title(title)
+    plt.grid()
+    c = ["g", "b"]
+    a = ["Hawthorne", "Dickens"]
+    for i in range(len(x)):
+        plt.plot(x[i], y[i], c[i], label=a[i])
+        plt.plot([m[i]-d[i], m[i]-d[i]], [0, ((1)/(d[i]* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((m[i]-d[i]-m[i])/d[i])**2)))], "r-")
+        plt.plot([m[i], m[i]], [0, ((1)/(d[i]* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((m[i]-m[i])/d[i])**2)))], "y--")
+        plt.plot([m[i]+d[i], m[i]+d[i]], [0, ((1)/(d[i]* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((m[i]+d[i]-m[i])/d[i])**2)))], "r-")
+
+    for i in range(len(lines_x)):
+        plt.plot(lines_x[i], lines_y[i], "r")
+
+    plt.legend()
+
+    plt.show()
 
 #########################################
 #par comma, sen par, chap quote
@@ -146,7 +218,10 @@ great = file_read("Great_Expectations.txt", True)
 scar_dict = book_dict(scarlet, "Chapter", ".")
 great_dict = book_dict(great, "Chapter", "\n")
 
-sen_par(great_dict)
+#WORKS
+scar_sp = sen_par(scar_dict)
+great_sp = sen_par(great_dict)
+# print(scar_sp, great_sp)
 
 #WORKS
 scar_cp = comma_par(scar_dict)
@@ -157,3 +232,7 @@ great_cp = comma_par(great_dict)
 scar_qc = quotes_chap(scar_dict)
 great_qc = quotes_chap(great_dict)
 # print(scar_qc, great_qc)
+
+gauss_plot([scar_sp[-1], great_sp[-1]], "Sentence Paragraph Distribution", [scar_sp[0], great_sp[0]], [scar_sp[1], great_sp[1]])
+gauss_plot([scar_cp[-1], great_cp[-1]], "Comma Paragraph Distribution", [scar_cp[0], great_cp[0]], [scar_cp[1], great_cp[1]])
+gauss_plot([scar_qc[-1], great_qc[-1]], "Quotes Chapter Distribution", [scar_qc[0], great_qc[0]], [scar_qc[1], great_qc[1]])
