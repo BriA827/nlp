@@ -209,6 +209,24 @@ def gauss_plot(data, title, m, d):
 
     plt.show()
 
+def prob(features):
+    """feautures is a list of tuples, hawthorne first then dickens"""
+    prior0 = .5
+    prior1 = .5
+
+    for i in range(len(features)):
+        posterior0 = prior0*features[i][0] / (prior0 * features[i][0] + prior1 * features[i][1])
+        posterior1 = prior1*features[i][1] / (prior0 * features[i][0] + prior1 * features[i][1])
+        prior0 = posterior0
+        prior1 = posterior1
+
+    return prior0, prior1
+
+def feature_prob(x,m1,m2,d1,d2):
+    y1 = ((1)/(d1* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((x-m1)/d1)**2)))
+    y2 = ((1)/(d2* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((x-m2)/d2)**2)))
+    return y1,y2
+
 #########################################
 #par comma, sen par, chap quote
 
