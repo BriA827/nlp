@@ -194,8 +194,9 @@ def gauss_plot(data, title, m, d):
 
     plt.title(title)
     plt.grid()
-    c = ["g", "b", "r", "y"]
-    a = ["Hawthorne", "Dickens", "Unknown A", "Unknown B"]
+    c = ["g", "b"]
+    a = ["Hawthorne", "Dickens"]
+
     for i in range(len(x)):
         plt.plot(x[i], y[i], c[i], label=a[i])
         plt.plot([m[i]-d[i], m[i]-d[i]], [0, ((1)/(d[i]* math.sqrt(2*math.pi)) * (math.e)**((-1/2)*(((m[i]-d[i]-m[i])/d[i])**2)))], "r-")
@@ -204,7 +205,7 @@ def gauss_plot(data, title, m, d):
 
     for i in range(len(lines_x)):
         plt.plot(lines_x[i], lines_y[i], "r")
-
+    
     plt.legend()
 
     plt.show()
@@ -243,8 +244,8 @@ b_dict = book_dict(novelb, "CHAPTER", ".")
 #WORKS
 scar_sp = sen_par(scar_dict)
 great_sp = sen_par(great_dict)
-b_sp = sen_par(a_dict)
-a_sp = sen_par(b_dict)
+a_sp = sen_par(a_dict)
+b_sp = sen_par(b_dict)
 # print(scar_sp, great_sp)
 
 #WORKS
@@ -261,7 +262,15 @@ a_qc = quotes_chap(a_dict)
 b_qc = quotes_chap(b_dict)
 # print(scar_qc, great_qc)
 
-# gauss_plot([scar_sp[-1], great_sp[-1], a_sp[-1], b_sp[-1]], "Sentence Paragraph Distribution", [scar_sp[0], great_sp[0], a_sp[0], b_sp[0]], [scar_sp[1], great_sp[1], a_sp[1], b_sp[1]])
-# gauss_plot([scar_cp[-1], great_cp[-1], a_cp[-1], b_cp[-1]], "Comma Paragraph Distribution", [scar_cp[0], great_cp[0], a_cp[0], b_cp[0]], [scar_cp[1], great_cp[1], a_cp[1], b_cp[1]])
-# gauss_plot([scar_qc[-1], great_qc[-1], a_qc[-1], b_qc[-1]], "Quotes Chapter Distribution", [scar_qc[0], great_qc[0], a_qc[0], b_qc[0]], [scar_qc[1], great_qc[1], a_qc[1], b_qc[1]])
+a_sp_f = feature_prob(a_sp[0], scar_sp[0], great_sp[0], scar_sp[1], great_sp[1])
+b_sp_f = feature_prob(b_sp[0], scar_sp[0], great_sp[0], scar_sp[1], great_sp[1])
 
+a_cp_f = feature_prob(a_cp[0], scar_cp[0], great_cp[0], scar_cp[1], great_cp[1])
+b_cp_f = feature_prob(b_cp[0], scar_cp[0], great_cp[0], scar_cp[1], great_cp[1])
+
+a_qc_f = feature_prob(a_qc[0], scar_qc[0], great_qc[0], scar_qc[1], great_qc[1])
+b_qc_f = feature_prob(b_qc[0], scar_qc[0], great_qc[0], scar_qc[1], great_qc[1])
+
+# gauss_plot([scar_sp[-1], great_sp[-1]], "Sentence Paragraph Distribution", [scar_sp[0], great_sp[0]], [scar_sp[1], great_sp[1]])
+# gauss_plot([scar_cp[-1], great_cp[-1]], "Comma Paragraph Distribution", [scar_cp[0], great_cp[0]], [scar_cp[1], great_cp[1]])
+# gauss_plot([scar_qc[-1], great_qc[-1]], "Quotes Chapter Distribution", [scar_qc[0], great_qc[0]], [scar_qc[1], great_qc[1]])
