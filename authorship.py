@@ -274,3 +274,7 @@ b_qc_f = feature_prob(b_qc[0], scar_qc[0], great_qc[0], scar_qc[1], great_qc[1])
 # gauss_plot([scar_sp[-1], great_sp[-1]], "Sentence Paragraph Distribution", [scar_sp[0], great_sp[0]], [scar_sp[1], great_sp[1]])
 # gauss_plot([scar_cp[-1], great_cp[-1]], "Comma Paragraph Distribution", [scar_cp[0], great_cp[0]], [scar_cp[1], great_cp[1]])
 # gauss_plot([scar_qc[-1], great_qc[-1]], "Quotes Chapter Distribution", [scar_qc[0], great_qc[0]], [scar_qc[1], great_qc[1]])
+
+novel_a_prob = prob([a_sp_f, a_cp_f, a_qc_f])
+novel_b_prob = prob([b_sp_f, b_cp_f, b_qc_f])
+print(novel_a_prob, novel_b_prob)
